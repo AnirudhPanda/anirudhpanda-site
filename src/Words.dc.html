@@ -95,8 +95,8 @@ button:focus-visible,a:focus-visible{outline:3px solid #141414;outline-offset:3p
   <div style="max-width: 1240px; margin: 0 auto; padding: 80px clamp(16px, 5vw, 64px); display: flex; flex-direction: column; gap: 28px;">
     <div style="display: flex; flex-direction: column; gap: 8px;">
       <span style="font-size: 13px;">party trick</span>
-      <h2 style="margin: 0; font-family: 'Covered By Your Grace', cursive; font-weight: 400; font-size: clamp(44px, 6vw, 80px); line-height: 1;">1 brief, 3 voices</h2>
-      <p style="margin: 0; max-width: 56ch; font-size: 15px;">the brief: "tell people to start early." pick who's saying it. this is the job: same idea, sounding like the person, never like a template.</p>
+      <h2 style="margin: 0; font-family: 'Covered By Your Grace', cursive; font-weight: 400; font-size: clamp(44px, 6vw, 80px); line-height: 1;">1 brief, 4 voices</h2>
+      <p style="margin: 0; max-width: 56ch; font-size: 15px;">the brief: "sell a ₹2,000 massage gun." pick who's saying it. same product, 4 very different people. writing like each of them is the job.</p>
     </div>
     <div style="display: flex; flex-wrap: wrap; gap: 10px;" role="group" aria-label="Pick a voice">
       <sc-for list="{{ voices }}" as="v" hint-placeholder-count="3">
@@ -149,9 +149,10 @@ class Component extends DCLogic {
     super(props);
     this.state = { v: 0 };
     this.voices = [
-      { label: "a finance creator", who: "finance newsletter, sunday edition", text: "₹5K a month at 25 can beat ₹15K a month at 35. compounding is unfair like that. start this payday." },
-      { label: "a wellness newsletter", who: "wellness newsletter, morning issue", text: "you don't need a 30-day reset. you need water before chai and a walk before 9. start tomorrow, start small." },
-      { label: "a fitness brand", who: "fitness brand, instagram caption", text: "the best time to start was last year. the second best is this sunday's run. see you at the start line." }
+      { label: "a finance creator", who: "finance newsletter · sunday edition", text: "1 physio session: ₹1,200. you'll need 6. this costs ₹2,000 once and lives on your desk. it pays for itself by week 2, which is a better return than your fd." },
+      { label: "a wellness newsletter", who: "wellness newsletter · 9pm issue", text: "that knot between your shoulder blades has been there since march. you've basically named it. give it 2 minutes tonight, phone in the other room. it's waited long enough." },
+      { label: "a fitness brand", who: "fitness brand · instagram caption", text: "leg day ended yesterday. your legs didn't get the memo. 2 minutes with the kinetic and the stairs stop being a negotiation. ₹2,000, link in bio." },
+      { label: "a desi mom", who: "family whatsapp group · 6:47am", text: "beta papa bought massage machine. ₹2,000 only. since 3 days he is not giving it to anyone, even dog is waiting in line. forwarding link. reply ok when seen 🙏" }
     ];
   }
   renderVals() {
