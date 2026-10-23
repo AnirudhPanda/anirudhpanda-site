@@ -467,7 +467,7 @@ class Component extends DCLogic {
         if (e && e.preventDefault) e.preventDefault();
         if (s.sending) return;
         if (!f.name || !okEmail) { this.setState({ err: true }); return; }
-        const key = "WEB3FORMS_KEY";
+        const key = "0a8f6c73-c511-40b6-ac6d-d890ca898b28";
         if (!key || key.indexOf("WEB3FORMS") === 0) { this.setState({ sent: true, delivered: false, err: false }); return; }
         this.setState({ sending: true, err: false });
         fetch("https://api.web3forms.com/submit", {
