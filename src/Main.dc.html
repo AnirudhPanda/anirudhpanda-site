@@ -304,12 +304,19 @@ button:focus-visible,a:focus-visible{outline:3px solid #141414;outline-offset:3p
         <sc-if value="{{ showError }}" hint-placeholder-val="{{ false }}">
           <span style="font-size: 14px; color: #FFB81C;">add your name and a working email so i can reply.</span>
         </sc-if>
-        <button type="submit" class="btn" style="align-self: flex-start; cursor: pointer; background: #FFB81C; color: #141414; border: 2px solid #FFB81C; padding: 14px 24px; font-size: 16px; font-weight: 500; min-height: 52px; box-shadow: 4px 4px 0 #F3F3F3;">send my brief →</button>
+        <button type="submit" class="btn" style="align-self: flex-start; cursor: pointer; background: #FFB81C; color: #141414; border: 2px solid #FFB81C; padding: 14px 24px; font-size: 16px; font-weight: 500; min-height: 52px; box-shadow: 4px 4px 0 #F3F3F3;">{{ sendLabel }}</button>
       </form>
     </sc-if>
 
     <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
       <div style="max-width: 780px; display: flex; flex-direction: column; gap: 18px; margin-top: 8px;">
+        <sc-if value="{{ delivered }}" hint-placeholder-val="{{ false }}">
+        <span class="stamp" style="align-self: flex-start; font-family: 'Covered By Your Grace', cursive; font-size: 44px; line-height: 1; background: #FFB81C; color: #141414; border: 3px solid #F3F3F3; padding: 10px 22px; transform: rotate(-6deg);">brief sent ★</span>
+        <p style="margin: 0; font-size: 16px; max-width: 56ch;">got it, {{ form.name }}. it's already in my inbox. i reply within 48 hours.</p>
+        <pre style="margin: 0; white-space: pre-wrap; font: inherit; font-size: 14px; line-height: 1.6; background: #2A2A2A; border: 2px solid #A8A39A; padding: 18px;">{{ briefText }}</pre>
+        <button type="button" onClick="{{ editBrief }}" style="align-self: flex-start; cursor: pointer; background: transparent; color: #F3F3F3; border: 2px solid #F3F3F3; padding: 10px 18px; font-size: 14px; min-height: 44px;">send another</button>
+        </sc-if>
+        <sc-if value="{{ notDelivered }}" hint-placeholder-val="{{ true }}">
         <span class="stamp" style="align-self: flex-start; font-family: 'Covered By Your Grace', cursive; font-size: 44px; line-height: 1; background: #FFB81C; color: #141414; border: 3px solid #F3F3F3; padding: 10px 22px; transform: rotate(-6deg);">brief ready ★</span>
         <p style="margin: 0; font-size: 16px; max-width: 56ch;">nice one, {{ form.name }}. here's your brief. hit the button to send it from your email, or copy it to <span style="user-select: all; font-weight: 500;">anirudhpandaofficial@gmail.com</span>. i reply within 48 hours.</p>
         <pre style="margin: 0; white-space: pre-wrap; font: inherit; font-size: 14px; line-height: 1.6; background: #2A2A2A; border: 2px solid #A8A39A; padding: 18px; user-select: all;">{{ briefText }}</pre>
@@ -317,6 +324,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #141414;outline-offset:3p
           <a href="{{ mailto }}" style="background: #FFB81C; color: #141414; padding: 12px 20px; text-decoration: none; font-weight: 500; font-size: 15px;">send it from my email ↗</a>
           <button type="button" onClick="{{ editBrief }}" style="cursor: pointer; background: transparent; color: #F3F3F3; border: 2px solid #F3F3F3; padding: 10px 18px; font-size: 14px; min-height: 44px;">edit brief</button>
         </div>
+        </sc-if>
       </div>
     </sc-if>
 
@@ -438,8 +446,25 @@ class Component extends DCLogic {
       sent: s.sent,
       briefText: briefText,
       mailto: "mailto:anirudhpandaofficial@gmail.com?subject=" + encodeURIComponent("brief from " + (f.name || "someone") + (f.brand ? " at " + f.brand : "")) + "&body=" + encodeURIComponent(briefText),
-      submit: (e) => { if (e && e.preventDefault) e.preventDefault(); if (!f.name || !okEmail) { this.setState({ err: true }); return; } this.setState({ sent: true, err: false }); },
-      editBrief: () => this.setState({ sent: false }),
+      submit: (e) => {
+        if (e && e.preventDefault) e.preventDefault();
+        if (s.sending) return;
+        if (!f.name || !okEmail) { this.setState({ err: true }); return; }
+        const key = "WEB3FORMS_KEY";
+        if (!key || key.indexOf("WEB3FORMS") === 0) { this.setState({ sent: true, delivered: false, err: false }); return; }
+        this.setState({ sending: true, err: false });
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({ access_key: key, subject: "new brief from " + f.name + (f.brand ? " at " + f.brand : ""), from_name: "anirudhpanda.in", replyto: f.email, name: f.name, email: f.email, brand: f.brand || "-", need: f.need || "-", when: f.when || "-", message: f.msg || "-" })
+        }).then((r) => r.json()).then((d) => {
+          this.setState({ sending: false, sent: true, delivered: !!(d && d.success) });
+        }).catch(() => this.setState({ sending: false, sent: true, delivered: false }));
+      },
+      sendLabel: s.sending ? "sending..." : "send my brief →",
+      delivered: !!s.delivered,
+      notDelivered: !s.delivered,
+      editBrief: () => this.setState({ sent: false, delivered: false }),
       searches: searches.concat(searches).map((t) => ({ t: t })),
       hits: shown.map((h, i) => ({ ...h, tilt: hitTilts[i % 4] })),
       hitsLabel: s.moreHits ? "show fewer ↑" : "show " + (this.hits.length - 4) + " more hits ↓",
