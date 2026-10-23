@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Social and brand work</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&amp;family=DM+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#F3EFE6}
+a{color:#141414}a:hover{color:#2A2A2A}
+button{font:inherit;color:inherit}
+button:focus-visible,a:focus-visible{outline:3px solid #141414;outline-offset:3px}
+.card{transition:translate .25s ease, rotate .25s ease, box-shadow .25s ease}
+.card:hover{translate:0 -6px;rotate:0deg;box-shadow:0 18px 34px rgba(20,20,20,0.22)}
+.card img{transition:scale .5s ease}
+.card:hover img{scale:1.04}
+@media (prefers-reduced-motion:reduce){.card,.card img{transition:none}}
+
+@media (max-width: 640px){
+.tophead{padding-top:14px!important;padding-bottom:8px!important;row-gap:10px!important}
+.topnav{flex-wrap:nowrap!important;overflow-x:auto;width:100%;gap:18px!important;padding-bottom:4px;scrollbar-width:none}
+.topnav::-webkit-scrollbar{display:none}
+.topnav a{white-space:nowrap;flex:0 0 auto}
+.topnav a:last-child{margin-left:auto}
+[style*="padding: 104px"],[style*="padding: 96px"],[style*="padding: 88px"],[style*="padding: 80px"]{padding-top:56px!important;padding-bottom:56px!important}
+}
+</style>
+</helmet>
+<div style="font-family: 'DM Mono', ui-monospace, monospace; color: #141414; background: #F3EFE6; font-size: 16px; line-height: 1.6; overflow-x: hidden;">
+
+<header class="tophead" style="max-width: 1240px; margin: 0 auto; padding: 22px clamp(16px, 5vw, 64px); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;">
+  <a href="Main.dc.html" style="font-family: 'Covered By Your Grace', cursive; font-size: 36px; line-height: 1; text-decoration: none;">ap.</a>
+  <nav aria-label="Pages" class="topnav" style="display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-size: 14px;">
+    <a href="Social.dc.html" style="text-decoration: underline; text-decoration-color: #FFB81C; text-decoration-thickness: 4px; text-underline-offset: 6px;">social</a>
+    <a href="Words.dc.html" style="text-decoration: none;">words</a>
+    <a href="Irl.dc.html" style="text-decoration: none;">irl</a>
+    <a href="Builds.dc.html" style="text-decoration: none;">builds</a>
+    <a href="Main.dc.html" style="text-decoration: none; background: #141414; color: #F3F3F3; padding: 8px 14px; font-weight: 500;">hire me</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section style="max-width: 1240px; margin: 0 auto; padding: 40px clamp(16px, 5vw, 64px) 72px; display: flex; flex-direction: column; gap: 24px;">
+  <span style="font-size: 13px; color: #6A655C;">01 · social &amp; brand · cultstore (curefit) · jul 25 → now</span>
+  <h1 style="margin: 0; font-family: 'Covered By Your Grace', cursive; font-weight: 400; font-size: clamp(56px, 8vw, 112px); line-height: 0.95; max-width: 14ch;">15 months, 1 guy, 160K new followers</h1>
+  <p style="margin: 0; max-width: 60ch; font-size: 17px;">i joined cultstore when the gram was around 60K. no agency, no big team. as of oct 26 it's past 220K, with brand films, creator collabs, athlete launches and a lot of reels i ideated, scripted and directed myself.</p>
+</section>
+
+<!-- STATS -->
+<section style="background: #141414; color: #F3F3F3;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 48px clamp(16px, 5vw, 64px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 32px;">
+    <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-weight: 500; font-size: 48px; line-height: 1; color: #FFB81C;">220K+</span><span style="font-size: 13px; color: #A8A39A;">followers, up from 60K</span></div>
+    <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-weight: 500; font-size: 48px; line-height: 1;">30M+</span><span style="font-size: 13px; color: #A8A39A;">organic views a month</span></div>
+    <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-weight: 500; font-size: 48px; line-height: 1;">100M+</span><span style="font-size: 13px; color: #A8A39A;">views from creator partnerships</span></div>
+    <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-weight: 500; font-size: 48px; line-height: 1;">10+</span><span style="font-size: 13px; color: #A8A39A;">brand campaigns, end to end</span></div>
+  </div>
+</section>
+
+<!-- TABS -->
+<div style="max-width: 1240px; margin: 0 auto; padding: 48px clamp(16px, 5vw, 64px) 0; display: flex; flex-wrap: wrap; gap: 12px; align-items: center;" role="tablist" aria-label="Pick a type of work">
+  <span style="font-size: 13px; color: #6A655C; margin-right: 4px;">show me:</span>
+  <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
+    <button type="button" role="tab" onClick="{{ t.pick }}" aria-selected="{{ t.on }}" class="tabbtn" style="cursor: pointer; border: 2px solid #141414; background: {{ t.bg }}; color: #141414; padding: 12px 18px; font-size: 15px; font-weight: 500; min-height: 48px; box-shadow: {{ t.shadow }};">{{ t.label }} <span style="font-size: 12px; opacity: 0.7;">({{ t.count }})</span></button>
+  </sc-for>
+</div>
+
+<sc-if value="{{ showCreators }}" hint-placeholder-val="{{ true }}">
+<!-- CREATORS -->
+<section id="creators" style="max-width: 1240px; margin: 0 auto; padding: 64px clamp(16px, 5vw, 64px) 40px; display: flex; flex-direction: column; gap: 32px;">
+  <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; align-items: flex-end; justify-content: space-between;">
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <span style="font-size: 13px; color: #6A655C;">creators &amp; collabs</span>
+      <h2 style="margin: 0; font-family: 'Covered By Your Grace', cursive; font-weight: 400; font-size: clamp(44px, 6vw, 80px); line-height: 1;">other people's audiences, our story</h2>
+    </div>
+    <p style="margin: 0; max-width: 40ch; font-size: 14px;">the playbook: pick the right person, hand them the product and a loose brief, then get out of the way.</p>
+  </div>
+
+  <a href="https://www.instagram.com/p/DUvQZB6iDd9/" class="card" style="text-decoration: none; display: flex; flex-wrap: wrap; gap: 36px; align-items: center; background: #FFFFFF; border: 2px solid #141414; padding: 20px; box-shadow: 8px 8px 0 #141414;">
+    <div style="flex: 0 1 300px; min-width: 0; overflow: hidden;">
+      <img src="/_blob/e477c3ddbbdd918d608c2a8ac9814e2a" alt="Creator Chirag walking backwards on the Cult WalkPad" style="display: block; width: 100%; height: auto;">
+    </div>
+    <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 12px;">
+      <span style="font-size: 12px; color: #6A655C;">creator collab · @chirag.walunj</span>
+      <span style="font-weight: 500; font-size: clamp(56px, 7vw, 88px); line-height: 0.95; letter-spacing: -0.03em;"><span style="background: linear-gradient(transparent 55%, #FFB81C 55%, #FFB81C 92%, transparent 92%);">5M</span> views</span>
+      <p style="margin: 0; font-size: 16px; max-width: 44ch;">an 8K-follower creator, our walkpad and zero rules. he walked 10,000 steps backwards on it. ~5M organic views and 130K likes later, that's the playbook.</p>
+      <span style="font-weight: 500; font-size: 14px;">watch it ↗</span>
+    </div>
+  </a>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 28px 22px; align-items: start;">
+    <sc-for list="{{ creators }}" as="c" hint-placeholder-count="4">
+      <a href="{{ c.url }}" class="card" style="text-decoration: none; background: #FFFFFF; padding: 12px 12px 18px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 10px 22px rgba(20,20,20,0.14); rotate: {{ c.tilt }};">
+        <div style="overflow: hidden;"><img src="{{ c.img }}" alt="{{ c.alt }}" style="display: block; width: 100%; height: auto;"></div>
+        <span style="font-size: 11px; color: #6A655C;">{{ c.meta }}</span>
+        <span style="font-weight: 500; font-size: 19px; line-height: 1.2;">{{ c.name }}</span>
+        <span style="font-size: 13px; line-height: 1.45;">{{ c.line }}</span>
+      </a>
+    </sc-for>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ showFilms }}" hint-placeholder-val="{{ false }}">
+<!-- FILMS -->
+<section id="films" style="background: #141414; color: #F3F3F3; margin-top: 40px;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 88px clamp(16px, 5vw, 64px) 96px; display: flex; flex-direction: column; gap: 32px;">
+    <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; align-items: flex-end; justify-content: space-between;">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <span style="font-size: 13px; color: #A8A39A;">brand films &amp; product</span>
+        <h2 style="margin: 0; font-family: 'Covered By Your Grace', cursive; font-weight: 400; font-size: clamp(44px, 6vw, 80px); line-height: 1; color: #F3F3F3;">stuff i helped bring life</h2>
+      </div>
+      <p style="margin: 0; max-width: 40ch; font-size: 14px; color: #A8A39A;">enjoyed the beautiful and life taking process of making a brand film</p>
+    </div>
+    <div style="columns: 3 260px; column-gap: 22px;">
+      <sc-for list="{{ films }}" as="f" hint-placeholder-count="8">
+        <a href="{{ f.url }}" class="card" style="text-decoration: none; color: #141414; background: #F3EFE6; padding: 12px 12px 18px; display: flex; flex-direction: column; gap: 10px; break-inside: avoid; margin-bottom: 26px; rotate: {{ f.tilt }};">
+          <div style="overflow: hidden;"><img src="{{ f.img }}" alt="{{ f.alt }}" style="display: block; width: 100%; height: auto;"></div>
+          <span style="font-size: 11px; color: #6A655C;">{{ f.meta }}</span>
+          <span style="font-weight: 500; font-size: 19px; line-height: 1.2;">{{ f.name }}</span>
+          <span style="font-size: 13px; line-height: 1.45;">{{ f.line }}</span>
+        </a>
+      </sc-for>
+    </div>
+    
+  </div>
+</section>
+</sc-if>
+
+
+<!-- HOW I RUN IT -->
+<section style="max-width: 1240px; margin: 0 auto; padding: 56px clamp(16px, 5vw, 64px) 88px; display: flex; flex-direction: column; gap: 28px;">
+  <span style="font-size: 13px; color: #6A655C;">how i run a feed</span>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 0; border-top: 2px solid #141414;">
+    <div style="padding: 22px 22px 22px 0; border-bottom: 1px solid #141414; display: flex; flex-direction: column; gap: 8px;"><span style="font-weight: 500; font-size: 15px;">1. the customer is the hero</span><span style="font-size: 14px;">cult is the enabler. athletes and creators show how the brand keeps you going, never the other way round.</span></div>
+    <div style="padding: 22px 22px 22px 0; border-bottom: 1px solid #141414; display: flex; flex-direction: column; gap: 8px;"><span style="font-weight: 500; font-size: 15px;">2. write it like a person</span><span style="font-size: 14px;">if a caption sounds like a brand wrote it, it gets rewritten.</span></div>
+    <div style="padding: 22px 22px 22px 0; border-bottom: 1px solid #141414; display: flex; flex-direction: column; gap: 8px;"><span style="font-weight: 500; font-size: 15px;">3. try a lot, double down</span><span style="font-size: 14px;">micro-dramas, athlete stories, spark content. anything that hits 3x normal reach is a win, so we make more of it.</span></div>
+    <div style="padding: 22px 22px 22px 0; border-bottom: 1px solid #141414; display: flex; flex-direction: column; gap: 8px;"><span style="font-weight: 500; font-size: 15px;">4. read the numbers every 14 days</span><span style="font-size: 14px;">followers, reach, profile visits, link taps. tracked fortnightly on a dashboard i built.</span></div>
+  </div>
+</section>
+
+<section style="background: #141414; color: #F3F3F3;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 72px clamp(16px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between;">
+    <span style="font-family: 'Covered By Your Grace', cursive; font-size: clamp(36px, 4vw, 56px); line-height: 1; color: #FFB81C;">want this for your brand?</span>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+      <a href="Words.dc.html" style="color: #F3F3F3; border: 2px solid #F3F3F3; padding: 10px 16px; text-decoration: none; font-size: 14px;">next: words →</a>
+      <a href="Main.dc.html" style="background: #FFB81C; color: #141414; padding: 12px 18px; text-decoration: none; font-size: 14px; font-weight: 500;">hire me</a>
+    </div>
+  </div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const B = "/_blob/";
+    const p = (c) => "https://www.instagram.com/p/" + c + "/";
+    const T = ["-1.4deg", "1deg", "-0.6deg", "1.6deg", "-1deg", "0.7deg"];
+    const tilt = (list) => list.map((x, i) => ({ ...x, tilt: T[i % T.length] }));
+    const v = this.vals();
+    const tab = (this.state && this.state.tab) || "creators";
+    const defs = [["creators", "creators & collabs", v.creators.length + 1], ["films", "brand films & product", v.films.length]];
+    return {
+      creators: tilt(v.creators),
+      films: tilt(v.films),
+      showCreators: tab === "creators",
+      showFilms: tab === "films",
+      tabs: defs.map(([id, label, count]) => ({
+        label: label,
+        count: count,
+        on: tab === id ? "true" : "false",
+        bg: tab === id ? "#FFB81C" : "#FFFFFF",
+        shadow: tab === id ? "4px 4px 0 #141414" : "none",
+        pick: () => this.setState({ tab: id })
+      }))
+    };
+  }
+  vals() {
+    const B = "/_blob/";
+    const p = (c) => "https://www.instagram.com/p/" + c + "/";
+    return {
+      creators: [
+        { img: B + "6467af6112caccbfcb6551985e6f2351", alt: "Akshay Kakkar in Cult apparel", meta: "creator collab", name: "akshay kakkar", line: "a creator collab with akshay kakkar, in cult apparel.", url: p("DN8GCWkEoqD") },
+        { img: B + "e39eb39b0767d4168bd309d07db7a7dc", alt: "Anmol Raina testing the Cult Kinetic massager", meta: "product launch · @anmolraina13", name: "kinetic massager x anmol raina", line: "launched the kinetic massager, our premium massage gun, with anmol raina.", url: p("Ddq43JjhhgG") },
+        { img: B + "3686954a3f361cdc097e6e542be3772d", alt: "ARMA and dancers in front of a CULT sign", meta: "artist collab · international dance day", name: "arma x cultstore", line: "rap artist arma, a dance crew and our gear on everyone. 1,277 likes.", url: p("DXtJw-LCMAm") },
+        { img: B + "e07f94e048cd01df138a809caba079ba", alt: "A couple taking a gym mirror selfie", meta: "brand collab · men's day", name: "aisle x cultstore", line: "a men's day collab with the dating app aisle. men in love is our fav genre.", url: p("DROt7GwCSHQ") }
+      ],
+      events: [
+        { when: "oct 25 · @wearecult", name: "rave fit", what: "a fitness rave. lights, music, planks.", img: B + "8e668c84e7d4f0fa2e041287f026c82e", url: p("DPRSGiAE87V") },
+        { when: "jan 26", name: "the first cult run x irc", what: "our first run with indiranagar run club. small things, big turnout.", img: B + "8f471a7c7f438268fa1bf916a46c54c7", url: p("DUIpHvOiSQO"), fav: true },
+        { when: "mar 26", name: "women's day deadlift party", what: "with gym girls club. uniting and uplifting women through lifting.", img: B + "e2ef89b1d9c49a374e38c1e82d584016", url: p("DVyMykRCbDz"), fav: true },
+        { when: "mar 26", name: "cult fitness carnival", what: "our stall at the carnival. people came to browse, we made them move.", img: B + "1f3a959730c5b0c0397d3e1847f8aa3f", url: p("DV_E6QrjPCz") },
+        { when: "apr 26", name: "vinyasa yoga day", what: "cultstore x akin club x bastian for yoga day.", img: B + "affbc6c45e4bc0269ad16ed7a72573b7", url: p("DW-tP67jFTt") },
+        { when: "apr 26", name: "hyrox athletes", what: "sponsored hyrox athletes in cult gear and had fun doing it.", img: B + "dfc232532fcfa13277bb535aa967dc24", url: p("DXTRMNMjCsS") },
+        { when: "apr 26", name: "cult run 2.0 x irc", what: "round 2 with indiranagar run club. bangalore showed up again.", img: B + "3fe6f7515873522c17aef0028eaf6293", url: p("DXrTqGPjHEI") },
+        { when: "apr 26", name: "dance day x arma", what: "international dance day with rap artist arma.", img: B + "3686954a3f361cdc097e6e542be3772d", url: p("DXtJw-LCMAm") },
+        { when: "may 26", name: "flex with your mom", what: "a mother's day workout and breakfast at jw marriott.", img: B + "05fef884bc606550b1aff28b4f3e7997", url: p("DYPaZ-Hprh5") },
+        { when: "may 26", name: "hyfit games", what: "title sponsors. our recovery zone handled the aftermath.", img: B + "c331ed80a51bcd2e3e112429ec1b7584", url: p("DYUGcEusMpB") }
+      ],
+      films: [
+        { img: B + "6d830805b43bcdb17698d8f6a43b2343", alt: "A blue Cult barefoot shoe being strapped on", meta: "brand film · footwear", name: "the barefoot film", line: "a shoe that feels like wearing nothing.", url: p("DeeXC7Jhkbz") },
+        { img: B + "6b603ab15644977773237fd98d8b3faf", alt: "Athletes walking on a track in yellow shoes", meta: "brand film · apex racer launch", name: "the 19:47 film", line: "launching the apex racer with elite athletes.", url: p("DcDLV2jpjdn") },
+        { img: B + "4784830fe125f53080b2cca350fb9a2a", alt: "A man jumping in a Bangalore flower market", meta: "brand film · footwear", name: "cult footwear film", line: "the city doesn't wait. neither do we. 922 likes.", url: p("DOD3QeOCZS1") },
+        { img: B + "b9e2098bf5c175fab39f1327122a6f34", alt: "A woman holding a tray of gulab jamun", meta: "brand film · diwali", name: "#celebratewithmovement", line: "a diwali film with athletes from different sports. 1,161 likes.", url: p("DP_ZGbICdNM") },
+        { img: B + "723e33b51aeda85ea6ff725fc8ed363b", alt: "Office workers squatting at their desks", meta: "brand film · bottomwear", name: "be an everyday athlete", line: "why stand when you can squat? bottomwear for real life.", url: p("DUiaY9uiYPL") },
+        { img: B + "56676beafb0dfe9e4b94268ed5a9ba9f", alt: "An athlete in a teal Cult tee", meta: "launch · new season apparel", name: "new season drop", line: "new season apparel, launched with athletes.", url: p("DXwenO2JAtv") },
+        { img: B + "a4fc59295c39cc2c9d9d08968234dc46", alt: "Two women on Pilates reformers in skorts", meta: "storytelling · skorts", name: "meet anya and maira", line: "storytelling plus product content for skorts.", url: p("DZXf8ixMUHs") }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

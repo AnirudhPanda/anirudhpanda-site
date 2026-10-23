@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Anirudh Panda</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&amp;family=DM+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#F3EFE6}
+a{color:#141414}a:hover{color:#2A2A2A}
+button{font:inherit;color:inherit}
+button:focus-visible,a:focus-visible{outline:3px solid #141414;outline-offset:3px}
+.btn{transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #141414}
+.lift{transition:transform .2s ease}
+.lift:hover{transform:rotate(0deg) translateY(-4px)}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marq{animation:marq 60s linear infinite}
+.marq:hover{animation-play-state:paused}
+@keyframes pop{0%{opacity:.4;translate:0 10px}100%{opacity:1;translate:0 0}}
+.pop{animation:pop .35s ease-out both}
+@keyframes stamp{0%{transform:scale(1.6) rotate(-20deg);opacity:0}100%{transform:scale(1) rotate(-8deg);opacity:1}}
+.stamp{animation:stamp .35s cubic-bezier(.3,1.5,.6,1) both}
+@media (prefers-reduced-motion:reduce){.marq,.stamp,.pop{animation:none}.btn,.lift{transition:none}}
+
+@media (max-width: 640px){
+.tophead{padding-top:14px!important;padding-bottom:8px!important;row-gap:10px!important}
+.topnav{flex-wrap:nowrap!important;overflow-x:auto;width:100%;gap:18px!important;padding-bottom:4px;scrollbar-width:none}
+.topnav::-webkit-scrollbar{display:none}
+.topnav a{white-space:nowrap;flex:0 0 auto}
+.topnav a:last-child{margin-left:auto}
+[style*="padding: 104px"],[style*="padding: 96px"],[style*="padding: 88px"],[style*="padding: 80px"]{padding-top:56px!important;padding-bottom:56px!important}
+}
+
+@media (max-width: 640px){
+.herophotos{height:430px!important;max-width:100%!important;width:100%;flex-basis:100%!important}
+.shlabel{position:static!important;padding:8px 16px!important;box-shadow:none!important}
+.gamerow{flex-wrap:nowrap!important;gap:8px!important}
+.gamecard{flex:1 1 0!important;padding:6px 6px 10px!important;gap:6px!important}
+.gamecard span{font-size:11px!important;line-height:1.35!important}
+.gamecard .likes{font-size:20px!important}
+.gamevs{font-size:22px!important}
+}
+</style>
+</helmet>
+<div style="font-family: 'DM Mono', ui-monospace, monospace; color: #141414; background: #F3EFE6; font-size: 16px; line-height: 1.6; overflow-x: hidden;">
+
+<!-- NAV -->
+<header class="tophead" style="max-width: 1240px; margin: 0 auto; padding: 22px clamp(16px, 5vw, 64px); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;">
+  <a href="Main.dc.html" style="font-family: 'Covered By Your Grace', cursive; font-size: 36px; line-height: 1; text-decoration: none;">ap.</a>
+  <nav aria-label="Pages" class="topnav" style="display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-size: 14px;">
+    <a href="Social.dc.html" style="text-decoration: none;">social</a>
+    <a href="Words.dc.html" style="text-decoration: none;">words</a>
+    <a href="Irl.dc.html" style="text-decoration: none;">irl</a>
+    <a href="Builds.dc.html" style="text-decoration: none;">builds</a>
+    <a href="#brief" style="text-decoration: none; background: #141414; color: #F3F3F3; padding: 8px 14px; font-weight: 500;">hire me</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section style="max-width: 1240px; margin: 0 auto; padding: 28px clamp(16px, 5vw, 64px) 88px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center;">
+  <div style="flex: 999 1 540px; min-width: 0; display: flex; flex-direction: column; gap: 26px;">
+    <span style="font-size: 14px; color: #6A655C;">hi, i'm anirudh panda. marketer. bangalore.</span>
+    <h1 style="margin: 0; font-family: 'Covered By Your Grace', cursive; font-weight: 400; font-size: clamp(58px, 8.4vw, 118px); line-height: 0.93; text-wrap: balance;">your brand has a story. i make sure people <span style="position: relative; display: inline-block; white-space: nowrap;">give a damn.<svg aria-hidden="true" viewBox="0 0 300 24" preserveAspectRatio="none" style="position: absolute; left: -2%; bottom: -0.1em; width: 104%; height: 0.26em; overflow: visible;"><path d="M4 15 C 60 5, 120 21, 180 11 S 268 7, 296 13" fill="none" stroke="#FFB81C" stroke-width="10" stroke-linecap="round"></path></svg></span></h1>
+    <p style="margin: 0; max-width: 52ch; font-size: 17px;">social, content and community, done end to end: idea, script, shoot, creator, event, post, report. right now i run brand &amp; social at <strong style="font-weight: 500;">cultstore (curefit)</strong>. before that i made newsletters pay at <strong style="font-weight: 500;">inagiffy</strong> and built community at <strong style="font-weight: 500;">smallcase</strong>.</p>
+    <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+      <span style="font-size: 13px; color: #6A655C;">today's hat:</span>
+      <button type="button" onClick="{{ nextHat }}" class="btn" aria-label="Show another hat I wear" style="background: #FFB81C; border: 2px solid #141414; padding: 10px 16px; font-size: 15px; font-weight: 500; cursor: pointer; box-shadow: 4px 4px 0 #141414; transform: rotate(-1.5deg); min-height: 44px;">{{ hat }} ↻</button>
+      <span style="font-size: 13px; color: #6A655C;">← tap it. i wear 9.</span>
+    </div>
+    <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+      <a href="#work" class="btn" style="text-decoration: none; background: #141414; color: #F3F3F3; border: 2px solid #141414; padding: 12px 20px; font-weight: 500; box-shadow: 4px 4px 0 #6A655C;">see the work ↓</a>
+      <a href="https://drive.google.com/file/d/1XzffK5lXfKiXoDGp9QDGRoa1HlesZwP6/view?usp=sharing" class="btn" style="text-decoration: none; background: #F3EFE6; border: 2px solid #141414; padding: 12px 20px; font-weight: 500; box-shadow: 4px 4px 0 #141414;">resume ↗</a>
+    </div>
+  </div>
+  <div class="herophotos" style="flex: 1 1 340px; min-width: 0; position: relative; height: 540px; max-width: 470px;">
+    <figure style="margin: 0; position: absolute; right: 2%; top: 0; width: 60%; background: #FFFFFF; padding: 12px 12px 0; box-shadow: 0 14px 30px rgba(20,20,20,0.18); transform: rotate(4deg); z-index: 2;">
+      <div style="position: absolute; top: -14px; left: 50%; width: 100px; height: 28px; background: #FFB81C; transform: translateX(-50%) rotate(-5deg);"></div>
+      <img src="/_blob/d6f95f00601b10bf740f4627f98b0e5c" alt="Anirudh reading a shot list on a Cultstore shoot" style="display: block; width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top;">
+      <figcaption style="font-size: 13px; line-height: 1.45; padding: 10px 4px 14px;">8:30am. shoot starts, shot list check.</figcaption>
+    </figure>
+    <figure style="margin: 0; position: absolute; left: 0; bottom: 0; width: 46%; background: #FFFFFF; padding: 10px 10px 0; box-shadow: 0 10px 22px rgba(20,20,20,0.16); transform: rotate(-6deg); z-index: 3;">
+      <img src="/_blob/ee8cb8ba26fa6a5ba95bda631dba690c" alt="Anirudh running at HyFit Games" style="display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 30%;">
+      <figcaption style="font-size: 13px; line-height: 1.45; padding: 8px 4px 12px;">racing photo just to make sure you know i run</figcaption>
+    </figure>
+    <figure style="margin: 0; position: absolute; right: 0; bottom: 2%; width: 34%; background: #FFFFFF; padding: 8px 8px 0; box-shadow: 0 10px 22px rgba(20,20,20,0.16); transform: rotate(7deg); z-index: 4;">
+      <img src="/_blob/56927d66f2cf0bbe696a40f2612739e1" alt="Anirudh in a Diet Coke hoodie on a Bangalore street" style="display: block; width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center 35%;">
+      <figcaption style="font-size: 12px; line-height: 1.4; padding: 6px 2px 10px;">diet coke lovers?</figcaption>
+    </figure>
+    <span style="position: absolute; left: 4%; top: 6%; font-family: 'Covered By Your Grace', cursive; font-size: 30px; line-height: 1; transform: rotate(-8deg); z-index: 5;">yes, that's me ↘</span>
+  </div>
+</section>
+
+<!-- PROBLEM PICKER -->
+<section id="problem" style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 64px) 72px;">
+  <div style="border: 2px solid #141414; background: #FFFFFF; padding: clamp(24px, 4vw, 40px); box-shadow: 8px 8px 0 #141414; display: flex; flex-direction: column; gap: 22px;">
+    <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; justify-content: space-between;">
+      <h2 style="margin: 0; font-family: 'Covered By Your Grace', cursive; font-weight: 400; font-size: clamp(38px, 4.6vw, 62px); line-height: 1;">what's your problem?</h2>
+      <span style="font-size: 13px; color: #6A655C;">tap one. i've probably fixed it before.</span>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px;" role="group" aria-label="Pick your problem">
+      <sc-for list="{{ problems }}" as="p" hint-placeholder-count="5">
+        <button type="button" onClick="{{ p.pick }}" aria-pressed="{{ p.on }}" class="btn" style="cursor: pointer; border: 2px solid #141414; background: {{ p.bg }}; color: #141414; padding: 12px 18px; font-size: 15px; font-weight: 500; min-height: 48px; box-shadow: {{ p.shadow }};">{{ p.label }}</button>
+      </sc-for>
+    </div>
+    <sc-if value="{{ hasProblem }}" hint-placeholder-val="{{ false }}">
+      <div class="pop" style="background: #141414; color: #F3F3F3; padding: clamp(20px, 3vw, 32px); display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: flex-end; justify-content: space-between;">
+        <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-size: 12px; color: #FFB81C; font-weight: 500;">how i'd fix it</span>
+          <p style="margin: 0; font-size: clamp(17px, 2vw, 21px); line-height: 1.5; max-width: 56ch;">{{ problem.fix }}</p>
+          <span style="font-size: 13px; color: #A8A39A;">proof: {{ problem.proof }}</span>
+        </div>
+        <a href="#brief" style="background: #FFB81C; color: #141414; padding: 14px 20px; text-decoration: none; font-weight: 500; font-size: 15px; white-space: nowrap;">let's talk about it →</a>
+      </div>
+    </sc-if>
+    <sc-if value="{{ noProblem }}" hint-placeholder-val="{{ true }}">
+      <span style="font-size: 13px; color: #6A655C;">↑ pick one to see how i'd fix it</span>
+    </sc-if>
+  </div>
+</section>
+
+<!-- SEARCH HISTORY STRIP -->
+<div style="position: relative; background: #141414; color: #F3F3F3; overflow: hidden; border-top: 2px solid #141414; border-bottom: 2px solid #141414;" aria-label="My search history, marketing edition">
+  <span class="shlabel" style="position: absolute; left: 0; top: 0; bottom: 0; z-index: 2; display: flex; align-items: center; gap: 8px; background: #FFB81C; color: #141414; padding: 0 18px 0 max(16px, env(safe-area-inset-left, 0px)); font-weight: 500; font-size: 13px; white-space: nowrap; box-shadow: 12px 0 18px #141414;">my search history</span>
+  <div class="marq" style="display: flex; width: max-content; gap: 20px; padding: 16px 0; font-size: 17px; white-space: nowrap;">
+    <sc-for list="{{ searches }}" as="q" hint-placeholder-count="10">
+      <span style="display: inline-flex; align-items: center; gap: 10px; border: 1px solid #2A2A2A; border-radius: 999px; padding: 8px 18px; background: #2A2A2A;"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFB81C" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4.2-4.2"></path></svg>{{ q.t }}</span>
+    </sc-for>
+  </div>
+</div>
+
+<!-- 4 THINGS -->
+<section style="max-width: 1240px; margin: 0 auto; padding: 104px clamp(16px, 5vw, 64px) 88px; display: flex; flex-direction: column; gap: 40px;">
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <span style="font-size: 13px; color: #6A655C;">what i do</span>
+    <h2 style="margin: 0; font-family: 'Covered By Your Grace', cursive; font-weight: 400; font-size: clamp(46px, 6vw, 82px); line-height: 1;">4 things i'm stupidly good at</h2>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr)); gap: 24px;"><a href="Social.dc.html" class="btn" style="text-decoration: none; background: rgb(255, 255, 255); border: 2px solid rgb(20, 20, 20); padding: 28px; box-shadow: rgb(20, 20, 20) 4px 4px 0px; display: flex; flex-direction: column; gap: 10px">
+      <span style="font-size: 13px; color: rgb(106, 101, 92)">01 · social &amp; brand</span>
+      <span style="font-weight: 500; font-size: clamp(44px, 5vw, 64px); line-height: 1; letter-spacing: -0.03em">60K → 220K+</span>
+      <span style="font-size: 15px">cultstore's instagram in 15 months, with no social agency. campaigns, creators, brand films, the full feed.</span>
+      <span style="font-size: 12px; color: #6A655C;">cult · cultstore · arma · anmol raina · aisle</span>
+      <span style="font-weight: 500; font-size: 14px; margin-top: 6px">see all social work →</span>
+    </a>
+    <a href="Words.dc.html" class="btn" style="text-decoration: none; background: rgb(255, 255, 255); border: 2px solid rgb(20, 20, 20); padding: 28px; box-shadow: rgb(20, 20, 20) 4px 4px 0px; display: flex; flex-direction: column; gap: 10px">
+      <span style="font-size: 13px; color: rgb(106, 101, 92)">02 · words that convert</span>
+      <span style="font-weight: 500; font-size: clamp(44px, 5vw, 64px); line-height: 1; letter-spacing: -0.03em">₹1Cr+</span>
+      <span style="font-size: 15px">newsletter ad revenue for clients at inagiffy. +30% open rates. wrote for finance with sharan and leeza mangaldas.</span>
+      <span style="font-size: 12px; color: #6A655C;">frido · decathlon · xyxx · springworks · policybazaar · superteam · scripbox + 20 more</span>
+      <span style="font-weight: 500; font-size: 14px; margin-top: 6px">read the words →</span>
+    </a>
+    <a href="Irl.dc.html" class="btn" style="text-decoration: none; background: rgb(255, 255, 255); border: 2px solid rgb(20, 20, 20); padding: 28px; box-shadow: rgb(20, 20, 20) 4px 4px 0px; display: flex; flex-direction: column; gap: 10px">
+      <span style="font-size: 13px; color: rgb(106, 101, 92)">03 · community &amp; irl</span>
+      <span style="font-weight: 500; font-size: clamp(44px, 5vw, 64px); line-height: 1; letter-spacing: -0.03em">10+ events</span>
+      <span style="font-size: 15px">cult runs, a dance day with arma, a recovery zone at hyfit games, a sold-out tedx. people show up.</span>
+      <span style="font-size: 12px; color: #6A655C;">hyfit games · indiranagar run club · gym girls club · smallcase · tedxsitb</span>
+      <span style="font-weight: 500; font-size: 14px; margin-top: 6px">see the events →</span>
+    </a>
+    <a href="Builds.dc.html" class="btn" style="text-decoration: none; background: rgb(255, 255, 255); border: 2px solid rgb(20, 20, 20); padding: 28px; box-shadow: rgb(20, 20, 20) 4px 4px 0px; display: flex; flex-direction: column; gap: 10px">
+      <span style="font-size: 13px; color: rgb(106, 101, 92)">04 · building things</span>
+      <span style="font-weight: 500; font-size: clamp(44px, 5vw, 64px); line-height: 1; letter-spacing: -0.03em">5K+ users</span>
+      <span style="font-size: 15px">shipped studytub and opentek in college. at cult i build the dashboards: budgets, media roi, influencer roi.</span>
+      <span style="font-size: 12px; color: #6A655C;">studytub · opentek · girlscript · + a scrapbook of everything else</span>
+      <span style="font-weight: 500; font-size: 14px; margin-top: 6px">see the builds →</span>
+    </a>
+  </div>
+</section>
+
+<!-- HALL OF FAME -->
+<section id="work" style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 64px) 104px; display: flex; flex-direction: column; gap: 40px;">
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <span style="font-size: 13px; color: #6A655C;">hall of fame</span>
+    <h2 style="margin: 0; font-family: 'Covered By Your Grace', cursive; font-weight: 400; font-size: clamp(46px, 6vw, 82px); line-height: 1;">the greatest hits</h2>
+  </div>
+
+  <a href="https://www.instagram.com/chirag.walunj/reel/DUvQZB6iDd9/" style="text-decoration: none; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; background: #FFFFFF; border: 2px solid #141414; padding: 24px; box-shadow: 8px 8px 0 #141414;">
+    <div style="flex: 0 1 320px; min-width: 0; position: relative; overflow: hidden; background: #141414; transform: rotate(-2deg);">
+      <img src="/_blob/e477c3ddbbdd918d608c2a8ac9814e2a" alt="Creator Chirag on the Cult WalkPad" style="display: block; width: 100%; height: auto;">
+      <span style="position: absolute; left: 12px; top: 12px; background: #FFB81C; color: #141414; font-size: 11px; font-weight: 500; padding: 3px 8px;">▶ reel</span>
+      <span style="position: absolute; left: 0; right: 0; bottom: 0; background: rgba(20,20,20,0.6); color: #F3F3F3; font-size: 12px; padding: 10px 12px;">@chirag.walunj · ~5M views · ♥ 130K</span>
+    </div>
+    <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 12px;">
+      <span style="font-size: 12px; color: #6A655C;">social · creator collab · @chirag.walunj · feb 26</span>
+      <span style="font-weight: 500; font-size: clamp(56px, 7vw, 88px); line-height: 0.95; letter-spacing: -0.03em;"><span style="background: linear-gradient(transparent 55%, #FFB81C 55%, #FFB81C 92%, transparent 92%);">5M</span> views</span>
+      <p style="margin: 0; font-size: 16px; max-width: 44ch;">an 8K-follower creator, our walkpad and zero rules. he walked 10,000 steps backwards on it. ~5M organic views and 130K likes later, that's the playbook.</p>
+      <span style="font-weight: 500; font-size: 14px;">watch it ↗</span>
+    </div>
+  </a>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 32px 24px;">
+    <sc-for list="{{ hits }}" as="h" hint-placeholder-count="4">
+      <a href="{{ h.url }}" class="lift pop" style="text-decoration: none; background: #FFFFFF; padding: 10px 10px 16px; box-shadow: 0 10px 22px rgba(20,20,20,0.12); transform: rotate({{ h.tilt }}); display: flex; flex-direction: column; gap: 10px;">
+        <div style="position: relative; width: 100%; aspect-ratio: 4/5; overflow: hidden; background: #141414;">
+          <img src="{{ h.img }}" alt="{{ h.alt }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;">
+          <span style="position: absolute; left: 10px; top: 10px; background: #FFB81C; color: #141414; font-size: 11px; font-weight: 500; padding: 3px 8px;">{{ h.tag }}</span>
+        </div>
+        <span style="font-size: 11px; color: #6A655C;">{{ h.meta }}</span>
+        <span style="font-weight: 500; font-size: 24px; line-height: 1.1;">{{ h.big }}</span>
+        <span style="font-size: 13px; line-height: 1.45;">{{ h.cap }}</span>
+      </a>
+    </sc-for>
+  </div>
+  <button type="button" onClick="{{ toggleHits }}" class="btn" style="align-self: center; cursor: pointer; background: #FFB81C; border: 2px solid #141414; padding: 12px 22px; font-weight: 500; font-size: 15px; box-shadow: 4px 4px 0 #141414; min-height: 48px;">{{ hitsLabel }}</button>
+</section>
+
+<!-- GAME -->
+<section id="play" style="background: #FFB81C; border-bottom: 2px solid #141414;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 88px clamp(16px, 5vw, 64px); display: flex; flex-direction: column; gap: 36px;">
+    <div style="display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: flex-end; justify-content: space-between;">
+      <div style="display: flex; flex-direction: column; gap: 8px; min-width: 0;">
+        <span style="font-size: 13px;">quick game</span>
+        <h2 style="margin: 0; font-family: 'Covered By Your Grace', cursive; font-weight: 400; font-size: clamp(46px, 6vw, 82px); line-height: 1;">which reel did better?</h2>
+        <p style="margin: 0; max-width: 52ch; font-size: 15px;">2 real posts from my feed. tap the one you think got more likes. guessing this right is literally my job.</p>
+      </div>
+      <span style="font-weight: 500; font-size: 15px; background: #141414; color: #F3F3F3; padding: 8px 14px; font-variant-numeric: tabular-nums;">round {{ roundNum }}/5 · score {{ score }}</span>
+    </div>
+
+    <sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
+      <div style="display: flex; flex-direction: column; gap: 28px;">
+        <div class="gamerow" style="display: flex; flex-wrap: wrap; gap: 28px; align-items: stretch;">
+          <button type="button" onClick="{{ a.pick }}" class="lift gamecard" style="flex: 1 1 340px; min-width: 0; text-align: left; cursor: pointer; background: #FFFFFF; border: 3px solid {{ a.border }}; padding: 12px 12px 18px; transform: rotate(-1deg); display: flex; flex-direction: column; gap: 10px;">
+            <div style="position: relative; width: 100%; aspect-ratio: 4/5; overflow: hidden; background: #141414;">
+              <img src="{{ a.img }}" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;">
+              <span style="position: absolute; left: 10px; top: 10px; background: #F3F3F3; color: #141414; font-size: 12px; font-weight: 500; padding: 3px 10px;">A</span>
+            </div>
+            <span style="font-size: 15px;">{{ a.cap }}</span>
+            <span style="font-size: 12px; color: #6A655C;">{{ a.meta }}</span>
+            <sc-if value="{{ revealed }}" hint-placeholder-val="{{ false }}"><span class="likes" style="font-weight: 500; font-size: 34px; line-height: 1;">♥ {{ a.likes }}</span></sc-if>
+          </button>
+          <span class="gamevs" style="align-self: center; font-family: 'Covered By Your Grace', cursive; font-size: 44px;">vs</span>
+          <button type="button" onClick="{{ b.pick }}" class="lift gamecard" style="flex: 1 1 340px; min-width: 0; text-align: left; cursor: pointer; background: #FFFFFF; border: 3px solid {{ b.border }}; padding: 12px 12px 18px; transform: rotate(1deg); display: flex; flex-direction: column; gap: 10px;">
+            <div style="position: relative; width: 100%; aspect-ratio: 4/5; overflow: hidden; background: #141414;">
+              <img src="{{ b.img }}" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;">
+              <span style="position: absolute; left: 10px; top: 10px; background: #F3F3F3; color: #141414; font-size: 12px; font-weight: 500; padding: 3px 10px;">B</span>
+            </div>
+            <span style="font-size: 15px;">{{ b.cap }}</span>
+            <span style="font-size: 12px; color: #6A655C;">{{ b.meta }}</span>
+            <sc-if value="{{ revealed }}" hint-placeholder-val="{{ false }}"><span class="likes" style="font-weight: 500; font-size: 34px; line-height: 1;">♥ {{ b.likes }}</span></sc-if>
+          </button>
+        </div>
+        <sc-if value="{{ revealed }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; justify-content: space-between; background: #141414; color: #F3F3F3; padding: 20px 24px;">
+            <span style="font-size: 18px; line-height: 1.4; font-weight: 500; color: #FFB81C;">{{ verdict }}</span>
+            <button type="button" onClick="{{ next }}" style="cursor: pointer; background: #FFB81C; color: #141414; border: 2px solid #FFB81C; padding: 10px 18px; font-weight: 500; min-height: 44px;">{{ nextLabel }}</button>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ over }}" hint-placeholder-val="{{ false }}">
+      <div style="background: #141414; color: #F3F3F3; padding: 48px clamp(20px, 4vw, 48px); display: flex; flex-direction: column; gap: 16px; align-items: flex-start;">
+        <span style="font-weight: 500; font-size: clamp(64px, 10vw, 120px); line-height: 1;">{{ score }}/5</span>
+        <span style="font-size: 20px; line-height: 1.4; font-weight: 500; color: #FFB81C;">{{ finalLine }}</span>
+        <button type="button" onClick="{{ restart }}" style="cursor: pointer; background: #FFB81C; color: #141414; border: 2px solid #FFB81C; padding: 10px 18px; font-weight: 500; min-height: 44px;">play again ↻</button>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<!-- BRIEF ME -->
+<section id="brief" style="background: #141414; color: #F3F3F3;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 96px clamp(16px, 5vw, 64px) 104px; display: flex; flex-direction: column; gap: 28px;">
+    <span style="font-size: 13px; color: #A8A39A;">last thing</span>
+    <h2 style="margin: 0; font-family: 'Covered By Your Grace', cursive; font-weight: 400; font-size: clamp(44px, 6vw, 82px); line-height: 1; color: #F3F3F3; max-width: 18ch; text-wrap: balance;">you scrolled this far. that's better retention than most reels.</h2>
+    <span style="font-weight: 500; font-size: clamp(18px, 2.2vw, 24px); color: #FFB81C;">so let's talk. brief me in 30 seconds.</span>
+
+    <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+      <form onSubmit="{{ submit }}" style="display: flex; flex-direction: column; gap: 22px; max-width: 780px; margin-top: 8px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 18px;">
+          <label for="b-name" style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #A8A39A;">your name
+            <input id="b-name" type="text" autocomplete="name" value="{{ form.name }}" onChange="{{ setName }}" placeholder="priya" style="font: inherit; font-size: 16px; color: #F3F3F3; background: #2A2A2A; border: 2px solid #A8A39A; padding: 12px 14px; min-height: 48px; box-sizing: border-box;">
+          </label>
+          <label for="b-brand" style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #A8A39A;">brand or company
+            <input id="b-brand" type="text" autocomplete="organization" value="{{ form.brand }}" onChange="{{ setBrand }}" placeholder="your brand" style="font: inherit; font-size: 16px; color: #F3F3F3; background: #2A2A2A; border: 2px solid #A8A39A; padding: 12px 14px; min-height: 48px; box-sizing: border-box;">
+          </label>
+          <label for="b-email" style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #A8A39A;">your email, so i can reply
+            <input id="b-email" type="email" autocomplete="email" value="{{ form.email }}" onChange="{{ setEmail }}" placeholder="you@brand.com" style="font: inherit; font-size: 16px; color: #F3F3F3; background: #2A2A2A; border: 2px solid #A8A39A; padding: 12px 14px; min-height: 48px; box-sizing: border-box;">
+          </label>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-size: 13px; color: #A8A39A;">what do you need?</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;" role="group" aria-label="What do you need">
+            <sc-for list="{{ needs }}" as="n" hint-placeholder-count="5">
+              <button type="button" onClick="{{ n.pick }}" aria-pressed="{{ n.on }}" style="cursor: pointer; border: 2px solid {{ n.border }}; background: {{ n.bg }}; color: {{ n.fg }}; padding: 10px 16px; font-size: 14px; font-weight: 500; min-height: 44px;">{{ n.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-size: 13px; color: #A8A39A;">when?</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;" role="group" aria-label="When">
+            <sc-for list="{{ whens }}" as="w" hint-placeholder-count="3">
+              <button type="button" onClick="{{ w.pick }}" aria-pressed="{{ w.on }}" style="cursor: pointer; border: 2px solid {{ w.border }}; background: {{ w.bg }}; color: {{ w.fg }}; padding: 10px 16px; font-size: 14px; font-weight: 500; min-height: 44px;">{{ w.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+        <label for="b-msg" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #A8A39A;">anything else? (optional)
+          <textarea id="b-msg" rows="3" value="{{ form.msg }}" onChange="{{ setMsg }}" placeholder="the 1-line version of your brief" style="font: inherit; font-size: 16px; color: #F3F3F3; background: #2A2A2A; border: 2px solid #A8A39A; padding: 12px 14px; resize: vertical; box-sizing: border-box;"></textarea>
+        </label>
+        <sc-if value="{{ showError }}" hint-placeholder-val="{{ false }}">
+          <span style="font-size: 14px; color: #FFB81C;">add your name and a working email so i can reply.</span>
+        </sc-if>
+        <button type="submit" class="btn" style="align-self: flex-start; cursor: pointer; background: #FFB81C; color: #141414; border: 2px solid #FFB81C; padding: 14px 24px; font-size: 16px; font-weight: 500; min-height: 52px; box-shadow: 4px 4px 0 #F3F3F3;">send my brief →</button>
+      </form>
+    </sc-if>
+
+    <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+      <div style="max-width: 780px; display: flex; flex-direction: column; gap: 18px; margin-top: 8px;">
+        <span class="stamp" style="align-self: flex-start; font-family: 'Covered By Your Grace', cursive; font-size: 44px; line-height: 1; background: #FFB81C; color: #141414; border: 3px solid #F3F3F3; padding: 10px 22px; transform: rotate(-6deg);">brief ready ★</span>
+        <p style="margin: 0; font-size: 16px; max-width: 56ch;">nice one, {{ form.name }}. here's your brief. hit the button to send it from your email, or copy it to <span style="user-select: all; font-weight: 500;">anirudhpandaofficial@gmail.com</span>. i reply within 48 hours.</p>
+        <pre style="margin: 0; white-space: pre-wrap; font: inherit; font-size: 14px; line-height: 1.6; background: #2A2A2A; border: 2px solid #A8A39A; padding: 18px; user-select: all;">{{ briefText }}</pre>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+          <a href="{{ mailto }}" style="background: #FFB81C; color: #141414; padding: 12px 20px; text-decoration: none; font-weight: 500; font-size: 15px;">send it from my email ↗</a>
+          <button type="button" onClick="{{ editBrief }}" style="cursor: pointer; background: transparent; color: #F3F3F3; border: 2px solid #F3F3F3; padding: 10px 18px; font-size: 14px; min-height: 44px;">edit brief</button>
+        </div>
+      </div>
+    </sc-if>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 32px 56px; border-top: 1px solid #2A2A2A; padding-top: 32px; margin-top: 24px;">
+      <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-size: 13px; color: #A8A39A;">or just reach out</span>
+        <span style="font-weight: 500; font-size: clamp(18px, 2.2vw, 24px); word-break: break-all; user-select: all;">anirudhpandaofficial@gmail.com</span>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <a href="https://www.linkedin.com/in/anirudhpanda" style="color: #F3F3F3; border: 2px solid #F3F3F3; padding: 8px 14px; text-decoration: none; font-size: 14px;">linkedin ↗</a>
+          <a href="https://www.instagram.com/anirudhpandaa" style="color: #F3F3F3; border: 2px solid #F3F3F3; padding: 8px 14px; text-decoration: none; font-size: 14px;">instagram ↗</a>
+          <a href="https://substack.com/@anirudhpanda" style="color: #F3F3F3; border: 2px solid #F3F3F3; padding: 8px 14px; text-decoration: none; font-size: 14px;">newsletter ↗</a>
+          <a href="https://drive.google.com/file/d/1XzffK5lXfKiXoDGp9QDGRoa1HlesZwP6/view?usp=sharing" style="color: #141414; background: #FFB81C; border: 2px solid #FFB81C; padding: 8px 14px; text-decoration: none; font-size: 14px; font-weight: 500;">resume ↗</a>
+        </div>
+      </div>
+      <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 10px;">
+        <span style="font-size: 13px; color: #A8A39A;">terms &amp; conditions. tick all 3.</span>
+        <sc-for list="{{ terms }}" as="t" hint-placeholder-count="3">
+          <button type="button" onClick="{{ t.toggle }}" aria-pressed="{{ t.on }}" style="cursor: pointer; display: flex; gap: 12px; align-items: center; text-align: left; background: transparent; color: #F3F3F3; border: none; padding: 4px 0; font-size: 14px; min-height: 36px;">
+            <span style="flex: 0 0 22px; height: 22px; border: 2px solid #F3F3F3; background: {{ t.box }}; color: #141414; display: grid; place-items: center; font-weight: 500; font-size: 13px;">{{ t.mark }}</span>
+            <span>{{ t.label }}</span>
+          </button>
+        </sc-for>
+        <sc-if value="{{ allTicked }}" hint-placeholder-val="{{ false }}">
+          <span class="stamp" style="align-self: flex-start; font-family: 'Covered By Your Grace', cursive; font-size: 32px; line-height: 1; background: #FFB81C; color: #141414; border: 3px solid #F3F3F3; padding: 8px 16px; transform: rotate(-6deg); margin-top: 6px;">deal. when do i start?</span>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="max-width: 1240px; margin: 0 auto; padding: 24px clamp(16px, 5vw, 64px) 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #6A655C; border-top: 2px solid #141414;"><span>anirudh panda · bangalore</span>
+  <span>made with prompts and love</span></footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6400}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { r: 0, score: 0, pick: null, over: false, hat: 0, terms: [false, false, false], moreHits: false, problem: null, form: { name: "", brand: "", email: "", need: "", when: "", msg: "" }, sent: false, err: false };
+    this.problemList = [
+      { id: "reach", label: "my reach is dead", need: "social", fix: "i'd go through your last 30 posts, find the formats that actually travel, then build a weekly content system around them. more of what works, none of what doesn't.", proof: "cultstore went from 60K to 220K+ followers this way." },
+      { id: "film", label: "i need a brand film", need: "brand film", fix: "concept, script, shoot, edit and a launch plan, end to end. i keep it warm and specific, and i make sure it's built for the feed.", proof: "7 films for cultstore, from the barefoot film to the 19:47 film." },
+      { id: "creators", label: "i need creators", need: "creators", fix: "pick the right person over the biggest one, hand them the product and a loose brief, then stay out of the way.", proof: "an 8K-follower creator got us ~5M organic views." },
+      { id: "launch", label: "i'm launching something", need: "launch", fix: "launch content, creator seeding and an irl moment people actually show up to, all pointing at the same week.", proof: "the kinetic massager launch with anmol raina, plus 10 events in 8 months." },
+      { id: "newsletter", label: "my newsletter doesn't pay", need: "newsletter", fix: "fix the content first so people open it, then build sponsor inventory that fits your readers.", proof: "₹1Cr+ in newsletter ad revenue for 30+ clients at inagiffy." }
+    ];
+    const B = "/_blob/";
+    const ig = (a, c) => "https://www.instagram.com/" + a + "/reel/" + c + "/";
+    this.hits = [
+      { tag: "▶ film", img: B + "6d830805b43bcdb17698d8f6a43b2343", alt: "A blue Cult barefoot shoe being strapped on", meta: "@cultstore · brand film", big: "the barefoot film", cap: "a shoe that feels like wearing nothing. hero film for our barefoot launch.", url: "https://www.instagram.com/p/DeeXC7Jhkbz/" },
+      { tag: "✎ words", img: B + "0b93f6caea876cb4294110b51c096f12", alt: "Beyond with Sharan newsletter on NPS vs EPF", meta: "finance with sharan", big: "nps vs epf", cap: "retirement planning for people who'd rather not think about retirement.", url: "https://cdn.gamma.app/bfzfvhu4t6kvadw/38be9f8c9afc471dbe8579702dcde73b/original/NPS-vs.-EPF.pdf" },
+      { tag: "● irl", img: B + "8f471a7c7f438268fa1bf916a46c54c7", alt: "Runners at a Cult Run with Indiranagar Run Club", meta: "cult run x indiranagar run club", big: "bangalore showed up", cap: "run clubs, community mornings and medals.", url: "Irl.dc.html" },
+      { tag: "▶ social", img: B + "3686954a3f361cdc097e6e542be3772d", alt: "World Dance Day reel with ARMA", meta: "@armamusica · apr 26", big: "1,277 likes", cap: "world dance day with arma. 1 dance crew, 1 city, our gear on everyone.", url: ig("armamusica", "DXtJw-LCMAm") },
+      { tag: "▶ social", img: B + "b9e2098bf5c175fab39f1327122a6f34", alt: "Celebrate with movement festive reel", meta: "@cultstore · oct 25", big: "1,161 likes", cap: "#celebratewithmovement. festive season, but make people move.", url: ig("cultstore", "DP_ZGbICdNM") },
+      { tag: "● irl", img: B + "d6bca9ceb49ce251748522cdc2a31853", alt: "Anirudh at the TEDxSITB sponsor wall", meta: "tedxsitb · organiser", big: "sold out in 1 week", cap: "a team of 25, 10+ sponsors and ₹1.5L+ in revenue.", url: "Irl.dc.html" },
+      { tag: "▶ social", img: B + "4784830fe125f53080b2cca350fb9a2a", alt: "Cult shoe launch reel", meta: "@cultstore · sep 25", big: "922 likes", cap: "the city doesn't wait. neither do we. the cult shoe launch.", url: ig("cultstore", "DOD3QeOCZS1") },
+      { tag: "✎ words", img: B + "5e330f83707b16541a444d9f442c5d73", alt: "Nourish newsletter issue on caffeine", meta: "nourish with sim", big: "is caffeine messing with you?", cap: "a wellness issue that opens with the 3pm crash everyone knows.", url: "https://cdn.gamma.app/bfzfvhu4t6kvadw/94373f88314946f8947ed49d75540dad/original/sim-nws.beehiiv.compcaffeine-messing-with-you.pdf" }
+    ];
+    this.hats = ["social media guy", "creator wrangler", "event head", "scriptwriter", "director", "marketing ops", "finance ops (ugh)", "logistics", "endslate model"];
+    this.rounds = [
+      { a: { img: "/_blob/c331ed80a51bcd2e3e112429ec1b7584", cap: "hyfit games: athletes pushed limits, our recovery zone handled the rest.", meta: "@cultstore · may 26", likes: 133 },
+        b: { img: "/_blob/e2ef89b1d9c49a374e38c1e82d584016", cap: "our kind of women's day: loud cheers, heavy lifts.", meta: "@cultstore · mar 26", likes: 254 } },
+      { a: { img: "/_blob/4784830fe125f53080b2cca350fb9a2a", cap: "the city doesn't wait. neither do we. cult shoe launch.", meta: "@cultstore · sep 25", likes: 922 },
+        b: { img: "/_blob/3686954a3f361cdc097e6e542be3772d", cap: "world dance day: arma x cultstore.", meta: "@armamusica · apr 26", likes: 1277 } },
+      { a: { img: "/_blob/3fe6f7515873522c17aef0028eaf6293", cap: "cult run 2.0 with indiranagar run club. bangalore showed up again.", meta: "@cultstore · apr 26", likes: 96 },
+        b: { img: "/_blob/b9e2098bf5c175fab39f1327122a6f34", cap: "#celebratewithmovement: move, groove, celebrate this festive season.", meta: "@cultstore · oct 25", likes: 1161 } },
+      { a: { img: "/_blob/8f471a7c7f438268fa1bf916a46c54c7", cap: "some mornings are about pace. this one was about people.", meta: "@cultstore · jan 26", likes: 119 },
+        b: { img: "/_blob/723e33b51aeda85ea6ff725fc8ed363b", cap: "why stand when you can squat? clothes for everyday movement.", meta: "@cultstore · feb 26", likes: 217 } },
+      { a: { img: "/_blob/56676beafb0dfe9e4b94268ed5a9ba9f", cap: "whatever your move, there's cult for it. new season drop with athletes.", meta: "@cultstore · apr 26", likes: 423 },
+        b: { img: "/_blob/1f3a959730c5b0c0397d3e1847f8aa3f", cap: "you came to take a look, we made you move. cult fitness carnival.", meta: "@cultstore · mar 26", likes: 153 } }
+    ];
+  }
+  choose(side) {
+    if (this.state.pick !== null || this.state.over) return;
+    const rd = this.rounds[this.state.r];
+    const win = rd.a.likes > rd.b.likes ? "a" : "b";
+    this.setState({ pick: side, score: this.state.score + (side === win ? 1 : 0) });
+  }
+  renderVals() {
+    const s = this.state;
+    const rd = this.rounds[s.r];
+    const win = rd.a.likes > rd.b.likes ? "a" : "b";
+    const revealed = s.pick !== null;
+    const fmt = (n) => n.toLocaleString("en-IN");
+    const border = (side) => (!revealed || side === win) ? "#141414" : "#D9D3C4";
+    const right = revealed && s.pick === win;
+    const yes = ["sahi pakde. you'd crush a content review.", "correct. the algorithm fears you.", "nailed it. you're hired as my intern.", "yes. you get the internet.", "bang on. go touch grass, you earned it."];
+    const no = ["nope. the algorithm humbles everyone.", "wrong, but so was my first boss.", "nah. this is why we a/b test.", "missed. i also got this one wrong.", "close. the feed is chaotic like that."];
+    const finals = ["the algorithm humbled you. happens to all of us.", "you'd survive a brand meeting. barely.", "decent gut. needs more doomscrolling.", "solid instinct. you'd fit on my team.", "you think like a social media manager.", "perfect. you're hired. wait, that's my line."];
+    const terms = ["you'll let me hit my protein goal", "gym 5 days a week stays sacred", "my manager is a vibe"];
+    const mk = (side) => ({ ...rd[side], likes: fmt(rd[side].likes), border: border(side), pick: () => this.choose(side) });
+    const hitTilts = ["-1.2deg", "0.8deg", "-0.5deg", "1.2deg"];
+    const shown = s.moreHits ? this.hits : this.hits.slice(0, 4);
+    const searches = ["how to make a reel go viral without paying", "why is reach down today", "best time to post on instagram 2026", "how to brief a creator who never reads briefs", "is a 3 second hook too long", "trending audio this week", "what is a good cpv for reels", "how to tell manager the budget is over", "can it be a brand film if it's shot on iphone", "caption that doesn't sound like ai", "why did the boring reel do better", "how many hashtags in 2026"];
+    const f = s.form;
+    const setF = (k) => (e) => this.setState({ form: { ...this.state.form, [k]: e && e.target ? e.target.value : e }, err: false });
+    const chip = (val, cur) => ({ on: val === cur ? "true" : "false", bg: val === cur ? "#FFB81C" : "transparent", fg: val === cur ? "#141414" : "#F3F3F3", border: val === cur ? "#FFB81C" : "#A8A39A" });
+    const prob = this.problemList.find((p) => p.id === s.problem) || null;
+    const lines = ["hi anirudh,", "", "i'm " + (f.name || "[name]") + (f.brand ? " from " + f.brand : "") + ".", "need: " + (f.need || "not sure yet"), "when: " + (f.when || "flexible")];
+    if (f.msg) lines.push("", f.msg);
+    lines.push("", "reply to: " + (f.email || "[email]"));
+    const briefText = lines.join("\n");
+    const okEmail = /.+@.+\..+/.test(f.email || "");
+    return {
+      problems: this.problemList.map((p) => ({ label: p.label, on: s.problem === p.id ? "true" : "false", bg: s.problem === p.id ? "#FFB81C" : "#FFFFFF", shadow: s.problem === p.id ? "4px 4px 0 #141414" : "none", pick: () => this.setState({ problem: p.id, form: { ...this.state.form, need: p.need } }) })),
+      hasProblem: !!prob,
+      noProblem: !prob,
+      problem: prob || { fix: "", proof: "" },
+      form: f,
+      setName: setF("name"),
+      setBrand: setF("brand"),
+      setEmail: setF("email"),
+      setMsg: setF("msg"),
+      needs: ["social", "brand film", "creators", "launch", "newsletter", "full-time role"].map((v) => ({ label: v, ...chip(v, f.need), pick: () => this.setState({ form: { ...this.state.form, need: v } }) })),
+      whens: ["asap", "this month", "just exploring"].map((v) => ({ label: v, ...chip(v, f.when), pick: () => this.setState({ form: { ...this.state.form, when: v } }) })),
+      showError: s.err,
+      notSent: !s.sent,
+      sent: s.sent,
+      briefText: briefText,
+      mailto: "mailto:anirudhpandaofficial@gmail.com?subject=" + encodeURIComponent("brief from " + (f.name || "someone") + (f.brand ? " at " + f.brand : "")) + "&body=" + encodeURIComponent(briefText),
+      submit: (e) => { if (e && e.preventDefault) e.preventDefault(); if (!f.name || !okEmail) { this.setState({ err: true }); return; } this.setState({ sent: true, err: false }); },
+      editBrief: () => this.setState({ sent: false }),
+      searches: searches.concat(searches).map((t) => ({ t: t })),
+      hits: shown.map((h, i) => ({ ...h, tilt: hitTilts[i % 4] })),
+      hitsLabel: s.moreHits ? "show fewer ↑" : "show " + (this.hits.length - 4) + " more hits ↓",
+      toggleHits: () => this.setState({ moreHits: !s.moreHits }),
+      hat: this.hats[s.hat],
+      nextHat: () => this.setState({ hat: (s.hat + 1) % this.hats.length }),
+      roundNum: Math.min(s.r + 1, 5),
+      score: s.score,
+      playing: !s.over,
+      over: s.over,
+      revealed: revealed,
+      a: mk("a"),
+      b: mk("b"),
+      verdict: right ? yes[s.r] : no[s.r],
+      nextLabel: s.r < 4 ? "next round →" : "see my score →",
+      next: () => { if (s.r < 4) this.setState({ r: s.r + 1, pick: null }); else this.setState({ over: true }); },
+      finalLine: finals[s.score],
+      restart: () => this.setState({ r: 0, score: 0, pick: null, over: false }),
+      terms: terms.map((label, i) => ({
+        label: label,
+        on: s.terms[i] ? "true" : "false",
+        box: s.terms[i] ? "#FFB81C" : "transparent",
+        mark: s.terms[i] ? "✓" : "",
+        toggle: () => { const t = s.terms.slice(); t[i] = !t[i]; this.setState({ terms: t }); }
+      })),
+      allTicked: s.terms.every(Boolean)
+    };
+  }
+}
+</script>
+</body>
+</html>

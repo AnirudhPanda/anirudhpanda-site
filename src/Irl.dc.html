@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Community and events</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&amp;family=DM+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#F3EFE6}
+a{color:#141414}a:hover{color:#2A2A2A}
+button{font:inherit;color:inherit}
+button:focus-visible,a:focus-visible{outline:3px solid #141414;outline-offset:3px}
+.lift{transition:transform .2s ease}
+.lift:hover{transform:rotate(0deg) translateY(-4px)}
+@media (prefers-reduced-motion:reduce){.lift{transition:none}}
+
+@media (max-width: 640px){
+.tophead{padding-top:14px!important;padding-bottom:8px!important;row-gap:10px!important}
+.topnav{flex-wrap:nowrap!important;overflow-x:auto;width:100%;gap:18px!important;padding-bottom:4px;scrollbar-width:none}
+.topnav::-webkit-scrollbar{display:none}
+.topnav a{white-space:nowrap;flex:0 0 auto}
+.topnav a:last-child{margin-left:auto}
+[style*="padding: 104px"],[style*="padding: 96px"],[style*="padding: 88px"],[style*="padding: 80px"]{padding-top:56px!important;padding-bottom:56px!important}
+}
+</style>
+</helmet>
+<div style="font-family: 'DM Mono', ui-monospace, monospace; color: #141414; background: #F3EFE6; font-size: 16px; line-height: 1.6; overflow-x: hidden;">
+
+<header class="tophead" style="max-width: 1240px; margin: 0 auto; padding: 22px clamp(16px, 5vw, 64px); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;">
+  <a href="Main.dc.html" style="font-family: 'Covered By Your Grace', cursive; font-size: 36px; line-height: 1; text-decoration: none;">ap.</a>
+  <nav aria-label="Pages" class="topnav" style="display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-size: 14px;">
+    <a href="Social.dc.html" style="text-decoration: none;">social</a>
+    <a href="Words.dc.html" style="text-decoration: none;">words</a>
+    <a href="Irl.dc.html" style="text-decoration: underline; text-decoration-color: #FFB81C; text-decoration-thickness: 4px; text-underline-offset: 6px;">irl</a>
+    <a href="Builds.dc.html" style="text-decoration: none;">builds</a>
+    <a href="Main.dc.html" style="text-decoration: none; background: #141414; color: #F3F3F3; padding: 8px 14px; font-weight: 500;">hire me</a>
+  </nav>
+</header>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 40px clamp(16px, 5vw, 64px) 72px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center;">
+  <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+    <span style="font-size: 13px; color: #6A655C;">03 · community &amp; irl</span>
+    <h1 style="margin: 0; font-family: 'Covered By Your Grace', cursive; font-weight: 400; font-size: clamp(56px, 8vw, 112px); line-height: 0.95; max-width: 14ch;">i get people off their phones and into a room</h1>
+    <p style="margin: 0; max-width: 58ch; font-size: 17px;">run clubs, dance days, recovery zones, a sold-out tedx. i've organised events every year since college, and at cultstore i ran 10+ of them end to end, mostly because there was nobody else to do it.</p>
+  </div>
+  <figure style="flex: 1 1 300px; max-width: 380px; min-width: 0; margin: 0; background: #FFFFFF; padding: 12px 12px 0; box-shadow: 0 14px 30px rgba(20,20,20,0.18); transform: rotate(3deg);">
+    <img src="/_blob/aec4684d8bd1a69fc0c858dd8e10d6e2" alt="Anirudh with the Cult champs at an event" style="display: block; width: 100%; aspect-ratio: 3/4; object-fit: cover;">
+    <figcaption style="font-size: 13px; line-height: 1.45; padding: 10px 4px 14px;">getting papped with cult champs</figcaption>
+  </figure>
+</section>
+
+<!-- CULT EVENTS -->
+<section style="background: #FFFFFF; border-top: 2px solid #141414; border-bottom: 2px solid #141414;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 88px clamp(16px, 5vw, 64px); display: flex; flex-direction: column; gap: 36px;">
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <span style="font-size: 13px; color: #6A655C;">at cultstore · oct 25 → may 26</span>
+      <h2 style="margin: 0; font-family: 'Covered By Your Grace', cursive; font-weight: 400; font-size: clamp(44px, 6vw, 80px); line-height: 1;">the events log</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 28px 24px;">
+      <sc-for list="{{ events }}" as="e" hint-placeholder-count="9">
+        <a href="{{ e.url }}" class="lift" style="text-decoration: none; background: #F3EFE6; padding: 10px 10px 16px; display: flex; flex-direction: column; gap: 8px; transform: rotate({{ e.tilt }});">
+          <div style="position: relative; width: 100%; aspect-ratio: 4/5; overflow: hidden; background: #141414;">
+            <sc-if value="{{ e.hasImg }}" hint-placeholder-val="{{ true }}">
+              <img src="{{ e.img }}" alt="{{ e.name }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;">
+            </sc-if>
+            <sc-if value="{{ e.noImg }}" hint-placeholder-val="{{ false }}">
+              <div style="position: absolute; inset: 0; background: #FFB81C; color: #141414; padding: 18px; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px;">
+                <span style="font-family: 'Covered By Your Grace', cursive; font-size: 34px; line-height: 1;">{{ e.name }}</span>
+                <span style="font-size: 11px;">watch the reel ↗</span>
+              </div>
+            </sc-if>
+            <span style="position: absolute; left: 10px; top: 10px; background: #141414; color: #F3F3F3; font-size: 11px; font-weight: 500; padding: 3px 8px;">{{ e.when }}</span>
+            <sc-if value="{{ e.fav }}" hint-placeholder-val="{{ false }}">
+              <span style="position: absolute; right: 10px; bottom: 12px; background: #FFB81C; color: #141414; border: 2px solid #141414; font-family: 'Covered By Your Grace', cursive; font-size: 26px; line-height: 1; padding: 6px 12px; transform: rotate(-6deg);">my fav ★</span>
+            </sc-if>
+          </div>
+                    <span style="font-weight: 500; font-size: 17px; line-height: 1.3;">{{ e.name }}</span>
+          <span style="font-size: 13px; line-height: 1.45;">{{ e.what }}</span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- FLIP -->
+<section style="max-width: 1240px; margin: 0 auto; padding: 96px clamp(16px, 5vw, 64px) 88px; display: flex; flex-direction: column; gap: 28px;">
+  <div style="display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: flex-end; justify-content: space-between;">
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <span style="font-size: 13px; color: #6A655C;">behind the scenes</span>
+      <h2 style="margin: 0; font-family: 'Covered By Your Grace', cursive; font-weight: 400; font-size: clamp(44px, 6vw, 80px); line-height: 1;">what you see vs what i see</h2>
+    </div>
+    <button type="button" onClick="{{ flip }}" style="cursor: pointer; background: #FFB81C; border: 2px solid #141414; padding: 12px 18px; font-weight: 500; font-size: 15px; box-shadow: 4px 4px 0 #141414; min-height: 44px;">{{ flipLabel }} ↻</button>
+  </div>
+  <div style="background: {{ flipBg }}; color: {{ flipFg }}; border: 2px solid #141414; padding: clamp(24px, 4vw, 44px); display: flex; flex-direction: column; gap: 14px;">
+    <span style="font-size: 13px; opacity: 0.75;">{{ flipTitle }}</span>
+    <sc-for list="{{ flipItems }}" as="it" hint-placeholder-count="5">
+      <span style="font-weight: 500; font-size: clamp(18px, 2.2vw, 24px); line-height: 1.35;">→ {{ it.t }}</span>
+    </sc-for>
+  </div>
+</section>
+
+<!-- BEFORE CULT -->
+<section style="background: #141414; color: #F3F3F3;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 88px clamp(16px, 5vw, 64px) 96px; display: flex; flex-direction: column; gap: 40px;">
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <span style="font-size: 13px; color: #A8A39A;">before cult</span>
+      <h2 style="margin: 0; font-family: 'Covered By Your Grace', cursive; font-weight: 400; font-size: clamp(44px, 6vw, 80px); line-height: 1;">the warm-up years</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 28px;">
+      <div style="background: #2A2A2A; padding: 14px; display: flex; flex-direction: column; gap: 12px;">
+        <img src="/_blob/d6bca9ceb49ce251748522cdc2a31853" alt="Anirudh at the TEDxSITB sponsor wall" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;">
+        <span style="font-size: 12px; color: #A8A39A;">organiser · tedxsitb</span>
+        <span style="font-weight: 500; font-size: 22px; line-height: 1.2;">sold out in 1 week</span>
+        <span style="font-size: 14px;">led a team of 25 and built pr, website and logistics from scratch. brought in 10+ sponsor brands, made ₹1.5L+, and the first on-ground run finished 2 minutes early.</span>
+      </div>
+      <div style="background: #2A2A2A; padding: 14px; display: flex; flex-direction: column; gap: 12px;">
+        <img src="/_blob/54e8ae17837c48d9a8ff61a2529ab94c" alt="A smallcase billboard next to Blinkit and Zomato billboards" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;">
+        <span style="font-size: 12px; color: #A8A39A;">community manager · apr 22 → feb 23</span>
+        <span style="font-weight: 500; font-size: 22px; line-height: 1.2;">made engineering cool to follow</span>
+        <span style="font-size: 14px;">built up the smallcase engineering brand. +20% community engagement and +15% developer outreach, by bridging the dev team and marketing.</span>
+      </div>
+      <div style="background: #2A2A2A; padding: 14px; display: flex; flex-direction: column; gap: 12px;">
+        <img src="/_blob/4866321eba3a529e953c06aec52eabc9" alt="Rhythmnova 2K22 stage at college" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;">
+        <span style="font-size: 12px; color: #A8A39A;">college · silicon university</span>
+        <span style="font-weight: 500; font-size: 22px; line-height: 1.2;">events, all 4 years</span>
+        <span style="font-size: 14px;">rhythmnova, a mun, student council in final year, and a first pr stunt that sold 50+ tickets in a day. attendance suffered. worth it.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 72px clamp(16px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between;">
+  <span style="font-family: 'Covered By Your Grace', cursive; font-size: clamp(36px, 4vw, 56px); line-height: 1;">need people to actually show up?</span>
+  <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+    <a href="Builds.dc.html" style="border: 2px solid #141414; padding: 10px 16px; text-decoration: none; font-size: 14px;">next: builds →</a>
+    <a href="Main.dc.html" style="background: #141414; color: #F3F3F3; padding: 12px 18px; text-decoration: none; font-size: 14px; font-weight: 500;">hire me</a>
+  </div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4600}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { side: 0 };
+    const B = "/_blob/";
+    const ig = (a, c) => "https://www.instagram.com/" + a + "/reel/" + c + "/";
+    this.events = [
+      { when: "oct 25", name: "rave fit", what: "a fitness rave. lights, music, planks. awsm folks at wearecult did this primarily.", img: B + "8e668c84e7d4f0fa2e041287f026c82e", url: ig("wearecult", "DPRSGiAE87V") },
+      { when: "jan 26", name: "the first cult run x irc", what: "our first run with indiranagar run club. small things, big turnout.", img: B + "8f471a7c7f438268fa1bf916a46c54c7", url: ig("cultstore", "DUIpHvOiSQO") },
+      { when: "mar 26", name: "women's day deadlift party", what: "with gym girls club. uniting and uplifting women through lifting.", img: B + "e2ef89b1d9c49a374e38c1e82d584016", url: ig("cultstore", "DVyMykRCbDz") },
+      { when: "mar 26", name: "cult fitness carnival", what: "our stall at the carnival. people came to browse, we made them move.", img: B + "1f3a959730c5b0c0397d3e1847f8aa3f", url: ig("cultstore", "DV_E6QrjPCz") },
+      { when: "apr 26", name: "vinyasa yoga day", what: "cultstore x akin club x bastian for yoga day.", img: B + "affbc6c45e4bc0269ad16ed7a72573b7", url: ig("cultstore", "DW-tP67jFTt") },
+      { when: "apr 26", name: "hyrox athletes", what: "sponsored hyrox athletes in cult gear and had a lot of fun doing it.", img: B + "dfc232532fcfa13277bb535aa967dc24", url: ig("cultstore", "DXTRMNMjCsS") },
+      { when: "apr 26", name: "cult run 2.0 x irc", what: "round 2 with indiranagar run club. bangalore showed up again.", img: B + "3fe6f7515873522c17aef0028eaf6293", url: ig("cultstore", "DXrTqGPjHEI") },
+      { when: "apr 26", name: "dance day x arma", what: "international dance day with rap artist arma. 1,277 likes.", img: B + "3686954a3f361cdc097e6e542be3772d", url: ig("armamusica", "DXtJw-LCMAm") },
+      { when: "may 26", name: "flex with your mom", what: "a mother's day workout and breakfast at jw marriott, with offlyn and social dining.", img: B + "05fef884bc606550b1aff28b4f3e7997", url: ig("cultstore", "DYPaZ-Hprh5") },
+      { when: "may 26", name: "hyfit games", what: "title sponsors. our recovery zone handled the aftermath.", img: B + "c331ed80a51bcd2e3e112429ec1b7584", url: ig("cultstore", "DYUGcEusMpB") }
+    ];
+    this.sides = [
+      { label: "show what i see", title: "what you see", bg: "#FFFFFF", fg: "#141414", items: ["a sunrise run with your crew", "free merch and a medal", "a great reel the next morning", "people asking when the next one is"] },
+      { label: "show what you see", title: "what i see", bg: "#141414", fg: "#F3F3F3", items: ["the vendor sheet, the budget sheet, the backup sheet", "a 5am call about the banner", "permissions, logistics and a lot of water bottles", "shooting the reel while running the event", "people asking when the next one is (worth it)"] }
+    ];
+  }
+  renderVals() {
+    const tilts = ["-1.1deg", "0.9deg", "-0.4deg"];
+    const s = this.sides[this.state.side];
+    return {
+      events: this.events.map((e, i) => ({ ...e, hasImg: !!e.img, noImg: !e.img, fav: e.url.indexOf("DUIpHvOiSQO") > -1 || e.url.indexOf("DVyMykRCbDz") > -1, tilt: tilts[i % 3] })),
+      flip: () => this.setState({ side: 1 - this.state.side }),
+      flipLabel: s.label,
+      flipTitle: s.title,
+      flipBg: s.bg,
+      flipFg: s.fg,
+      flipItems: s.items.map((t) => ({ t: t }))
+    };
+  }
+}
+</script>
+</body>
+</html>
