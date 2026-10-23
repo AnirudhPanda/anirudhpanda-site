@@ -14,6 +14,7 @@
 <meta name="theme-color" content="#F3EFE6">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://anirudhpanda.in/social">
+<link rel="preload" as="image" href="/assets/e477c3ddbbdd918d608c2a8ac9814e2a.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&amp;family=DM+Mono:wght@400;500&amp;display=swap">
 <style>
@@ -92,7 +93,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #141414;outline-offset:3p
 
   <a href="https://www.instagram.com/p/DUvQZB6iDd9/" class="card" style="text-decoration: none; display: flex; flex-wrap: wrap; gap: 36px; align-items: center; background: #FFFFFF; border: 2px solid #141414; padding: 20px; box-shadow: 8px 8px 0 #141414;">
     <div style="flex: 0 1 300px; min-width: 0; overflow: hidden;">
-      <img src="/assets/e477c3ddbbdd918d608c2a8ac9814e2a.jpg" alt="Creator Chirag walking backwards on the Cult WalkPad" style="display: block; width: 100%; height: auto;">
+      <img loading="lazy" decoding="async" src="/assets/e477c3ddbbdd918d608c2a8ac9814e2a.webp" alt="Creator Chirag walking backwards on the Cult WalkPad" style="display: block; width: 100%; height: auto;">
     </div>
     <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 12px;">
       <span style="font-size: 12px; color: #6A655C;">creator collab · @chirag.walunj</span>
@@ -105,7 +106,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #141414;outline-offset:3p
   <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 28px 22px; align-items: start;">
     <sc-for list="{{ creators }}" as="c" hint-placeholder-count="4">
       <a href="{{ c.url }}" class="card" style="text-decoration: none; background: #FFFFFF; padding: 12px 12px 18px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 10px 22px rgba(20,20,20,0.14); rotate: {{ c.tilt }};">
-        <div style="overflow: hidden;"><img src="{{ c.img }}" alt="{{ c.alt }}" style="display: block; width: 100%; height: auto;"></div>
+        <div style="overflow: hidden;"><img loading="lazy" decoding="async" src="{{ c.img }}" alt="{{ c.alt }}" style="display: block; width: 100%; height: auto;"></div>
         <span style="font-size: 11px; color: #6A655C;">{{ c.meta }}</span>
         <span style="font-weight: 500; font-size: 19px; line-height: 1.2;">{{ c.name }}</span>
         <span style="font-size: 13px; line-height: 1.45;">{{ c.line }}</span>
@@ -129,7 +130,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #141414;outline-offset:3p
     <div style="columns: 3 260px; column-gap: 22px;">
       <sc-for list="{{ films }}" as="f" hint-placeholder-count="8">
         <a href="{{ f.url }}" class="card" style="text-decoration: none; color: #141414; background: #F3EFE6; padding: 12px 12px 18px; display: flex; flex-direction: column; gap: 10px; break-inside: avoid; margin-bottom: 26px; rotate: {{ f.tilt }};">
-          <div style="overflow: hidden;"><img src="{{ f.img }}" alt="{{ f.alt }}" style="display: block; width: 100%; height: auto;"></div>
+          <div style="overflow: hidden;"><img loading="lazy" decoding="async" src="{{ f.img }}" alt="{{ f.alt }}" style="display: block; width: 100%; height: auto;"></div>
           <span style="font-size: 11px; color: #6A655C;">{{ f.meta }}</span>
           <span style="font-weight: 500; font-size: 19px; line-height: 1.2;">{{ f.name }}</span>
           <span style="font-size: 13px; line-height: 1.45;">{{ f.line }}</span>
@@ -197,31 +198,31 @@ class Component extends DCLogic {
     const p = (c) => "https://www.instagram.com/p/" + c + "/";
     return {
       creators: [
-        { img: B + "6467af6112caccbfcb6551985e6f2351.jpg", alt: "Akshay Kakkar in Cult apparel", meta: "creator collab", name: "akshay kakkar", line: "a creator collab with akshay kakkar, in cult apparel.", url: p("DN8GCWkEoqD") },
-        { img: B + "e39eb39b0767d4168bd309d07db7a7dc.jpg", alt: "Anmol Raina testing the Cult Kinetic massager", meta: "product launch · @anmolraina13", name: "kinetic massager x anmol raina", line: "launched the kinetic massager, our premium massage gun, with anmol raina.", url: p("Ddq43JjhhgG") },
-        { img: B + "3686954a3f361cdc097e6e542be3772d.jpg", alt: "ARMA and dancers in front of a CULT sign", meta: "artist collab · international dance day", name: "arma x cultstore", line: "rap artist arma, a dance crew and our gear on everyone. 1,277 likes.", url: p("DXtJw-LCMAm") },
-        { img: B + "e07f94e048cd01df138a809caba079ba.jpg", alt: "A couple taking a gym mirror selfie", meta: "brand collab · men's day", name: "aisle x cultstore", line: "a men's day collab with the dating app aisle. men in love is our fav genre.", url: p("DROt7GwCSHQ") }
+        { img: B + "6467af6112caccbfcb6551985e6f2351.webp", alt: "Akshay Kakkar in Cult apparel", meta: "creator collab", name: "akshay kakkar", line: "a creator collab with akshay kakkar, in cult apparel.", url: p("DN8GCWkEoqD") },
+        { img: B + "e39eb39b0767d4168bd309d07db7a7dc.webp", alt: "Anmol Raina testing the Cult Kinetic massager", meta: "product launch · @anmolraina13", name: "kinetic massager x anmol raina", line: "launched the kinetic massager, our premium massage gun, with anmol raina.", url: p("Ddq43JjhhgG") },
+        { img: B + "3686954a3f361cdc097e6e542be3772d.webp", alt: "ARMA and dancers in front of a CULT sign", meta: "artist collab · international dance day", name: "arma x cultstore", line: "rap artist arma, a dance crew and our gear on everyone. 1,277 likes.", url: p("DXtJw-LCMAm") },
+        { img: B + "e07f94e048cd01df138a809caba079ba.webp", alt: "A couple taking a gym mirror selfie", meta: "brand collab · men's day", name: "aisle x cultstore", line: "a men's day collab with the dating app aisle. men in love is our fav genre.", url: p("DROt7GwCSHQ") }
       ],
       events: [
-        { when: "oct 25 · @wearecult", name: "rave fit", what: "a fitness rave. lights, music, planks.", img: B + "8e668c84e7d4f0fa2e041287f026c82e.jpg", url: p("DPRSGiAE87V") },
-        { when: "jan 26", name: "the first cult run x irc", what: "our first run with indiranagar run club. small things, big turnout.", img: B + "8f471a7c7f438268fa1bf916a46c54c7.jpg", url: p("DUIpHvOiSQO"), fav: true },
-        { when: "mar 26", name: "women's day deadlift party", what: "with gym girls club. uniting and uplifting women through lifting.", img: B + "e2ef89b1d9c49a374e38c1e82d584016.jpg", url: p("DVyMykRCbDz"), fav: true },
-        { when: "mar 26", name: "cult fitness carnival", what: "our stall at the carnival. people came to browse, we made them move.", img: B + "1f3a959730c5b0c0397d3e1847f8aa3f.jpg", url: p("DV_E6QrjPCz") },
-        { when: "apr 26", name: "vinyasa yoga day", what: "cultstore x akin club x bastian for yoga day.", img: B + "affbc6c45e4bc0269ad16ed7a72573b7.jpg", url: p("DW-tP67jFTt") },
-        { when: "apr 26", name: "hyrox athletes", what: "sponsored hyrox athletes in cult gear and had fun doing it.", img: B + "dfc232532fcfa13277bb535aa967dc24.jpg", url: p("DXTRMNMjCsS") },
-        { when: "apr 26", name: "cult run 2.0 x irc", what: "round 2 with indiranagar run club. bangalore showed up again.", img: B + "3fe6f7515873522c17aef0028eaf6293.jpg", url: p("DXrTqGPjHEI") },
-        { when: "apr 26", name: "dance day x arma", what: "international dance day with rap artist arma.", img: B + "3686954a3f361cdc097e6e542be3772d.jpg", url: p("DXtJw-LCMAm") },
-        { when: "may 26", name: "flex with your mom", what: "a mother's day workout and breakfast at jw marriott.", img: B + "05fef884bc606550b1aff28b4f3e7997.jpg", url: p("DYPaZ-Hprh5") },
-        { when: "may 26", name: "hyfit games", what: "title sponsors. our recovery zone handled the aftermath.", img: B + "c331ed80a51bcd2e3e112429ec1b7584.jpg", url: p("DYUGcEusMpB") }
+        { when: "oct 25 · @wearecult", name: "rave fit", what: "a fitness rave. lights, music, planks.", img: B + "8e668c84e7d4f0fa2e041287f026c82e.webp", url: p("DPRSGiAE87V") },
+        { when: "jan 26", name: "the first cult run x irc", what: "our first run with indiranagar run club. small things, big turnout.", img: B + "8f471a7c7f438268fa1bf916a46c54c7.webp", url: p("DUIpHvOiSQO"), fav: true },
+        { when: "mar 26", name: "women's day deadlift party", what: "with gym girls club. uniting and uplifting women through lifting.", img: B + "e2ef89b1d9c49a374e38c1e82d584016.webp", url: p("DVyMykRCbDz"), fav: true },
+        { when: "mar 26", name: "cult fitness carnival", what: "our stall at the carnival. people came to browse, we made them move.", img: B + "1f3a959730c5b0c0397d3e1847f8aa3f.webp", url: p("DV_E6QrjPCz") },
+        { when: "apr 26", name: "vinyasa yoga day", what: "cultstore x akin club x bastian for yoga day.", img: B + "affbc6c45e4bc0269ad16ed7a72573b7.webp", url: p("DW-tP67jFTt") },
+        { when: "apr 26", name: "hyrox athletes", what: "sponsored hyrox athletes in cult gear and had fun doing it.", img: B + "dfc232532fcfa13277bb535aa967dc24.webp", url: p("DXTRMNMjCsS") },
+        { when: "apr 26", name: "cult run 2.0 x irc", what: "round 2 with indiranagar run club. bangalore showed up again.", img: B + "3fe6f7515873522c17aef0028eaf6293.webp", url: p("DXrTqGPjHEI") },
+        { when: "apr 26", name: "dance day x arma", what: "international dance day with rap artist arma.", img: B + "3686954a3f361cdc097e6e542be3772d.webp", url: p("DXtJw-LCMAm") },
+        { when: "may 26", name: "flex with your mom", what: "a mother's day workout and breakfast at jw marriott.", img: B + "05fef884bc606550b1aff28b4f3e7997.webp", url: p("DYPaZ-Hprh5") },
+        { when: "may 26", name: "hyfit games", what: "title sponsors. our recovery zone handled the aftermath.", img: B + "c331ed80a51bcd2e3e112429ec1b7584.webp", url: p("DYUGcEusMpB") }
       ],
       films: [
-        { img: B + "6d830805b43bcdb17698d8f6a43b2343.jpg", alt: "A blue Cult barefoot shoe being strapped on", meta: "brand film · footwear", name: "the barefoot film", line: "a shoe that feels like wearing nothing.", url: p("DeeXC7Jhkbz") },
-        { img: B + "6b603ab15644977773237fd98d8b3faf.jpg", alt: "Athletes walking on a track in yellow shoes", meta: "brand film · apex racer launch", name: "the 19:47 film", line: "launching the apex racer with elite athletes.", url: p("DcDLV2jpjdn") },
-        { img: B + "4784830fe125f53080b2cca350fb9a2a.jpg", alt: "A man jumping in a Bangalore flower market", meta: "brand film · footwear", name: "cult footwear film", line: "the city doesn't wait. neither do we. 922 likes.", url: p("DOD3QeOCZS1") },
-        { img: B + "b9e2098bf5c175fab39f1327122a6f34.jpg", alt: "A woman holding a tray of gulab jamun", meta: "brand film · diwali", name: "#celebratewithmovement", line: "a diwali film with athletes from different sports. 1,161 likes.", url: p("DP_ZGbICdNM") },
-        { img: B + "723e33b51aeda85ea6ff725fc8ed363b.jpg", alt: "Office workers squatting at their desks", meta: "brand film · bottomwear", name: "be an everyday athlete", line: "why stand when you can squat? bottomwear for real life.", url: p("DUiaY9uiYPL") },
-        { img: B + "56676beafb0dfe9e4b94268ed5a9ba9f.jpg", alt: "An athlete in a teal Cult tee", meta: "launch · new season apparel", name: "new season drop", line: "new season apparel, launched with athletes.", url: p("DXwenO2JAtv") },
-        { img: B + "a4fc59295c39cc2c9d9d08968234dc46.jpg", alt: "Two women on Pilates reformers in skorts", meta: "storytelling · skorts", name: "meet anya and maira", line: "storytelling plus product content for skorts.", url: p("DZXf8ixMUHs") }
+        { img: B + "6d830805b43bcdb17698d8f6a43b2343.webp", alt: "A blue Cult barefoot shoe being strapped on", meta: "brand film · footwear", name: "the barefoot film", line: "a shoe that feels like wearing nothing.", url: p("DeeXC7Jhkbz") },
+        { img: B + "6b603ab15644977773237fd98d8b3faf.webp", alt: "Athletes walking on a track in yellow shoes", meta: "brand film · apex racer launch", name: "the 19:47 film", line: "launching the apex racer with elite athletes.", url: p("DcDLV2jpjdn") },
+        { img: B + "4784830fe125f53080b2cca350fb9a2a.webp", alt: "A man jumping in a Bangalore flower market", meta: "brand film · footwear", name: "cult footwear film", line: "the city doesn't wait. neither do we. 922 likes.", url: p("DOD3QeOCZS1") },
+        { img: B + "b9e2098bf5c175fab39f1327122a6f34.webp", alt: "A woman holding a tray of gulab jamun", meta: "brand film · diwali", name: "#celebratewithmovement", line: "a diwali film with athletes from different sports. 1,161 likes.", url: p("DP_ZGbICdNM") },
+        { img: B + "723e33b51aeda85ea6ff725fc8ed363b.webp", alt: "Office workers squatting at their desks", meta: "brand film · bottomwear", name: "be an everyday athlete", line: "why stand when you can squat? bottomwear for real life.", url: p("DUiaY9uiYPL") },
+        { img: B + "56676beafb0dfe9e4b94268ed5a9ba9f.webp", alt: "An athlete in a teal Cult tee", meta: "launch · new season apparel", name: "new season drop", line: "new season apparel, launched with athletes.", url: p("DXwenO2JAtv") },
+        { img: B + "a4fc59295c39cc2c9d9d08968234dc46.webp", alt: "Two women on Pilates reformers in skorts", meta: "storytelling · skorts", name: "meet anya and maira", line: "storytelling plus product content for skorts.", url: p("DZXf8ixMUHs") }
       ]
     };
   }

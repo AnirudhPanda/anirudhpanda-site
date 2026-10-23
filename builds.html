@@ -185,7 +185,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #141414;outline-offset:3p
     <div style="display: flex; flex-wrap: wrap; gap: 32px 26px; justify-content: center; align-items: flex-start;">
       <sc-for list="{{ photos }}" as="p" hint-placeholder-count="16">
         <figure class="pol" style="margin: {{ p.mt }} 0 0; flex: 0 1 {{ p.w }}; min-width: 0; background: #F3EFE6; color: #141414; padding: 10px 10px 0; transform: rotate({{ p.tilt }});">
-          <img src="{{ p.img }}" alt="{{ p.alt }}" style="display: block; width: 100%; aspect-ratio: {{ p.ar }}; object-fit: cover;">
+          <img loading="lazy" decoding="async" src="{{ p.img }}" alt="{{ p.alt }}" style="display: block; width: 100%; aspect-ratio: {{ p.ar }}; object-fit: cover;">
           <figcaption style="font-size: 13px; line-height: 1.45; padding: 8px 2px 12px;">{{ p.cap }}</figcaption>
         </figure>
       </sc-for>
@@ -212,33 +212,33 @@ class Component extends DCLogic {
     this.state = { seed: 0 };
     const B = "/assets/";
     this.photos = [
-      { img: B + "ac67dfbbdb10efa0a06ac362b97ef4db.jpg", alt: "Anirudh as a kid on a rooftop", cap: "fashion sense certified since 6th grade", ar: "4/5" },
-      { img: B + "0e4995a45225c9b7563bf8eac4ca08b4.jpg", alt: "Anirudh filming himself on a tripod", cap: "been talking to camera since school", ar: "4/3" },
-      { img: B + "d9a258417730fee2b46539f3a568fb4a.jpg", alt: "A certificate of achievement", cap: "this certificate means a lot to me :)", ar: "4/3" },
-      { img: B + "65df5aea00b2258c0381002b9b3af2f2.jpg", alt: "Anirudh speaking at a podium", cap: "love giving gyaan", ar: "3/4" },
-      { img: B + "1bd048a8473d70bcf36cadc20ee5275d.jpg", alt: "Anirudh with a lanyard", cap: "more gyaan", ar: "3/4" },
-      { img: B + "c3c698b60262881a74064527e321e904.jpg", alt: "Anirudh presenting in front of a slide", cap: "some more blabbering", ar: "4/3" },
-      { img: B + "f1773ccf5eda89c47bdb49d1bb1ff916.jpg", alt: "Dance crew on stage with smoke", cap: "took my dance crew across india. we won.", ar: "4/3" },
-      { img: B + "7202ef5caa5d543bb9b265cda7024a68.jpg", alt: "Dance crew under stage lights", cap: "did it for the plot", ar: "4/3" },
-      { img: B + "d1c57d5407a822ea470464c013a67d30.jpg", alt: "Anirudh in a coding club t-shirt", cap: "founding member, college's first coding club", ar: "3/4" },
-      { img: B + "4500e43081147b4b7c4e4abe0f356ba3.jpg", alt: "Anirudh on a basketball court", cap: "made ads for tedx sponsor brands", ar: "3/4" },
-      { img: B + "d6bca9ceb49ce251748522cdc2a31853.jpg", alt: "Anirudh at the TEDxSITB sponsor wall", cap: "10+ sponsors for tedx. smooth operator.", ar: "4/3" },
-      { img: B + "efbe4b903aaa27bc669527b7ca2cae39.jpg", alt: "Anirudh beside a board of sticky notes", cap: "first pr stunt. 50+ tickets in a day.", ar: "3/4" },
-      { img: B + "7b0865f0cd96c546e751afb691889f15.jpg", alt: "Anirudh on a ladder putting up decor", cap: "koi kaam chota ya bada nahi hota", ar: "3/4" },
-      { img: B + "1149697e764e123c4e270d21549f60e8.jpg", alt: "Team receiving an ideathon cheque", cap: "won a few ideathons", ar: "4/5" },
-      { img: B + "dd415fdd5a4c2addc0f5a3c10b5ace23.jpg", alt: "Student council ID card", cap: "council, final year. chaos, professionally.", ar: "4/3" },
-      { img: B + "e846d2b183a07b15e9ddb18c3174888a.jpg", alt: "Anirudh receiving an award on stage", cap: "ran a mun to complete the checklist", ar: "4/3" },
-      { img: B + "0b2d03dc30071b0b86992bd8644c2c28.jpg", alt: "Anirudh in a Cult massager ad end slate", cap: "also moonlighting as an endslate", ar: "16/9" },
-      { img: B + "aba212eb347258d924fef29429f1c1af.jpg", alt: "Anirudh flexing behind the bar at Social", cap: "side hobby lol? behind the bar at social", ar: "3/4" },
-      { img: B + "93d3157d16d084af40bfca6e24430e89.jpg", alt: "Anirudh with a YouTube Creator Collective bag outside the Google office", cap: "at the google event. youtube creator collective.", ar: "9/16" },
-      { img: B + "d2a4d41e828990564e18d438d643672b.jpg", alt: "Anirudh reading in a bookstore", cap: "reading drama", ar: "3/4" },
-      { img: B + "f796d00bd7d3313d49aaca9514d102c1.jpg", alt: "Anirudh with a finisher medal and lanyard", cap: "i love events. medal for proof.", ar: "3/4" },
-      { img: B + "fe7cdb32aa3ebb511709dbb925686ca4.jpg", alt: "Anirudh in running gear by a blue and pink cabin", cap: "agara runners gang", ar: "4/3" },
-      { img: B + "1c1a2e6a36f4fd52ca11b9fe810b4d70.jpg", alt: "Anirudh flexing with Anmol Raina at HYROX", cap: "with anmol raina baby", ar: "3/4" },
-      { img: B + "dfc5c92987a5c241b3e5d88fd866a103.jpg", alt: "Anirudh with Sharmaji at HYROX", cap: "hyrox day with sharmaji", ar: "3/4" },
-      { img: B + "3dac6d51c83a7510480da92b25a70e64.jpg", alt: "Anirudh outside the Capgemini office", cap: "a very brief corporate arc. weird aaa story xD", ar: "3/4" },
-      { img: B + "61bb4923bed018c0bd0356f87b854f09.jpg", alt: "Anirudh sitting on top of a road roller in the hills", cap: "climbed a road roller in the hills. for the plot.", ar: "4/3" },
-      { img: B + "65634e4158aa92bb0299d0454ebcac9a.jpg", alt: "Anirudh flexing mid-race at No Parking", cap: "no parking by peakst8. my first ever race.", ar: "3/4" }
+      { img: B + "ac67dfbbdb10efa0a06ac362b97ef4db.webp", alt: "Anirudh as a kid on a rooftop", cap: "fashion sense certified since 6th grade", ar: "4/5" },
+      { img: B + "0e4995a45225c9b7563bf8eac4ca08b4.webp", alt: "Anirudh filming himself on a tripod", cap: "been talking to camera since school", ar: "4/3" },
+      { img: B + "d9a258417730fee2b46539f3a568fb4a.webp", alt: "A certificate of achievement", cap: "this certificate means a lot to me :)", ar: "4/3" },
+      { img: B + "65df5aea00b2258c0381002b9b3af2f2.webp", alt: "Anirudh speaking at a podium", cap: "love giving gyaan", ar: "3/4" },
+      { img: B + "1bd048a8473d70bcf36cadc20ee5275d.webp", alt: "Anirudh with a lanyard", cap: "more gyaan", ar: "3/4" },
+      { img: B + "c3c698b60262881a74064527e321e904.webp", alt: "Anirudh presenting in front of a slide", cap: "some more blabbering", ar: "4/3" },
+      { img: B + "f1773ccf5eda89c47bdb49d1bb1ff916.webp", alt: "Dance crew on stage with smoke", cap: "took my dance crew across india. we won.", ar: "4/3" },
+      { img: B + "7202ef5caa5d543bb9b265cda7024a68.webp", alt: "Dance crew under stage lights", cap: "did it for the plot", ar: "4/3" },
+      { img: B + "d1c57d5407a822ea470464c013a67d30.webp", alt: "Anirudh in a coding club t-shirt", cap: "founding member, college's first coding club", ar: "3/4" },
+      { img: B + "4500e43081147b4b7c4e4abe0f356ba3.webp", alt: "Anirudh on a basketball court", cap: "made ads for tedx sponsor brands", ar: "3/4" },
+      { img: B + "d6bca9ceb49ce251748522cdc2a31853.webp", alt: "Anirudh at the TEDxSITB sponsor wall", cap: "10+ sponsors for tedx. smooth operator.", ar: "4/3" },
+      { img: B + "efbe4b903aaa27bc669527b7ca2cae39.webp", alt: "Anirudh beside a board of sticky notes", cap: "first pr stunt. 50+ tickets in a day.", ar: "3/4" },
+      { img: B + "7b0865f0cd96c546e751afb691889f15.webp", alt: "Anirudh on a ladder putting up decor", cap: "koi kaam chota ya bada nahi hota", ar: "3/4" },
+      { img: B + "1149697e764e123c4e270d21549f60e8.webp", alt: "Team receiving an ideathon cheque", cap: "won a few ideathons", ar: "4/5" },
+      { img: B + "dd415fdd5a4c2addc0f5a3c10b5ace23.webp", alt: "Student council ID card", cap: "council, final year. chaos, professionally.", ar: "4/3" },
+      { img: B + "e846d2b183a07b15e9ddb18c3174888a.webp", alt: "Anirudh receiving an award on stage", cap: "ran a mun to complete the checklist", ar: "4/3" },
+      { img: B + "0b2d03dc30071b0b86992bd8644c2c28.webp", alt: "Anirudh in a Cult massager ad end slate", cap: "also moonlighting as an endslate", ar: "16/9" },
+      { img: B + "aba212eb347258d924fef29429f1c1af.webp", alt: "Anirudh flexing behind the bar at Social", cap: "side hobby lol? behind the bar at social", ar: "3/4" },
+      { img: B + "93d3157d16d084af40bfca6e24430e89.webp", alt: "Anirudh with a YouTube Creator Collective bag outside the Google office", cap: "at the google event. youtube creator collective.", ar: "9/16" },
+      { img: B + "d2a4d41e828990564e18d438d643672b.webp", alt: "Anirudh reading in a bookstore", cap: "reading drama", ar: "3/4" },
+      { img: B + "f796d00bd7d3313d49aaca9514d102c1.webp", alt: "Anirudh with a finisher medal and lanyard", cap: "i love events. medal for proof.", ar: "3/4" },
+      { img: B + "fe7cdb32aa3ebb511709dbb925686ca4.webp", alt: "Anirudh in running gear by a blue and pink cabin", cap: "agara runners gang", ar: "4/3" },
+      { img: B + "1c1a2e6a36f4fd52ca11b9fe810b4d70.webp", alt: "Anirudh flexing with Anmol Raina at HYROX", cap: "with anmol raina baby", ar: "3/4" },
+      { img: B + "dfc5c92987a5c241b3e5d88fd866a103.webp", alt: "Anirudh with Sharmaji at HYROX", cap: "hyrox day with sharmaji", ar: "3/4" },
+      { img: B + "3dac6d51c83a7510480da92b25a70e64.webp", alt: "Anirudh outside the Capgemini office", cap: "a very brief corporate arc. weird aaa story xD", ar: "3/4" },
+      { img: B + "61bb4923bed018c0bd0356f87b854f09.webp", alt: "Anirudh sitting on top of a road roller in the hills", cap: "climbed a road roller in the hills. for the plot.", ar: "4/3" },
+      { img: B + "65634e4158aa92bb0299d0454ebcac9a.webp", alt: "Anirudh flexing mid-race at No Parking", cap: "no parking by peakst8. my first ever race.", ar: "3/4" }
     ];
   }
   renderVals() {

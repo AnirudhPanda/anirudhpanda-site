@@ -16,12 +16,14 @@ for name,(slug,title,desc) in pages.items():
     def fix(t):
         for k,v in links.items():
             t=t.replace(f'"{k}#', f'"{v}#').replace(f'"{k}"', f'"{v}"')
-        t=re.sub(r'/_blob/([0-9a-f]{32})', r'/assets/\1.jpg', t)
+        t=re.sub(r'/_blob/([0-9a-f]{32})', r'/assets/\1.webp', t)
         t=t.replace('"/_blob/"','"/assets/"')
-        t=re.sub(r'B \+ "([0-9a-f]{32})"', r'B + "\1.jpg"', t)
+        t=re.sub(r'B \+ "([0-9a-f]{32})"', r'B + "\1.webp"', t)
         return t
     body,script,helmet=fix(body),fix(script),fix(helmet)
     body=re.sub(r'href="/"([^>]*>\s*hire me\s*</a>)', r'href="/#brief"\1', body)
+    body=re.sub(r'<img (?![^>]*loading=)', '<img loading="lazy" decoding="async" ', body)
+    pre=''.join(f'<link rel="preload" as="image" href="{u}">\n' for u in list(dict.fromkeys(re.findall(r'/assets/[0-9a-f]{32}\.webp', body)))[:3])
     assert '/_blob/' not in body+script and '.dc.html' not in body+script, name
     url='https://anirudhpanda.in'+('/' if slug=='index' else '/'+slug)
     html=f'''<!doctype html>
@@ -40,7 +42,7 @@ for name,(slug,title,desc) in pages.items():
 <meta name="theme-color" content="#F3EFE6">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="{url}">
-{helmet.strip()}
+{pre}{helmet.strip()}
 </head>
 <body>
 <div id="app"></div>
