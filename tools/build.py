@@ -41,6 +41,8 @@ for name,(slug,title,desc) in pages.items():
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F3EFE6">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script>window.va = window.va || function () {{ (window.vaq = window.vaq || []).push(arguments); }};</script>
+<script defer src="/_vercel/insights/script.js"></script>
 <link rel="canonical" href="{url}">
 {pre}{helmet.strip()}
 </head>
