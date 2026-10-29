@@ -26,7 +26,12 @@ button:focus-visible,a:focus-visible{outline:3px solid #141414;outline-offset:3p
 .pop{animation:pop .35s ease-out both}
 @keyframes stamp{0%{transform:scale(1.6) rotate(-20deg);opacity:0}100%{transform:scale(1) rotate(-8deg);opacity:1}}
 .stamp{animation:stamp .35s cubic-bezier(.3,1.5,.6,1) both}
-@media (prefers-reduced-motion:reduce){.marq,.stamp,.pop{animation:none}.btn,.lift{transition:none}}
+@keyframes marqr{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.marqr{animation:marqr 70s linear infinite}
+.credrow:hover .marq,.credrow:hover .marqr{animation-play-state:paused}
+@keyframes walk{0%,100%{translate:0 0}50%{translate:0 -9px}}
+.walk{animation:walk 1.1s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.marq,.marqr,.walk,.stamp,.pop{animation:none}.btn,.lift{transition:none}.credtrack{flex-wrap:wrap;width:auto!important;padding-left:clamp(16px,5vw,64px)!important}.dup{display:none!important}}
 
 @media (max-width: 640px){
 .tophead{padding-top:14px!important;padding-bottom:8px!important;row-gap:10px!important}
@@ -355,6 +360,32 @@ button:focus-visible,a:focus-visible{outline:3px solid #141414;outline-offset:3p
   </div>
 </section>
 
+<!-- END CREDITS -->
+<section id="credits" aria-label="End credits" style="background: #F3EFE6; border-top: 2px solid #141414; overflow: hidden; padding-bottom: 56px;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 72px clamp(16px, 5vw, 64px) 8px; display: flex; flex-wrap: wrap; gap: 12px 40px; align-items: flex-end; justify-content: space-between;">
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <span style="font-size: 13px; color: #6A655C;">end credits</span>
+      <h2 style="margin: 0; font-family: 'Covered By Your Grace', cursive; font-weight: 400; font-size: clamp(46px, 6vw, 82px); line-height: 1;">the end. roll credits.</h2>
+    </div>
+    <p style="margin: 0; max-width: 44ch; font-size: 14px;">none of this was a solo act. these are the people who made the work better, and the days a lot more fun.</p>
+  </div>
+  <sc-for list="{{ credRows }}" as="row" hint-placeholder-count="2">
+    <div class="credrow" style="margin-top: 28px;">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 64px); font-size: 12px; color: #6A655C;">{{ row.label }}</div>
+      <div style="overflow: hidden;">
+        <div class="{{ row.cls }} credtrack" style="display: flex; gap: 20px; width: max-content; padding: 20px 0 16px;">
+          <sc-for list="{{ row.cards }}" as="c" hint-placeholder-count="8">
+            <div class="walk {{ c.dupCls }}" style="flex: 0 0 auto; min-width: 150px; background: {{ c.bg }}; border: 2px solid #141414; padding: 12px 18px 14px; box-shadow: 4px 4px 0 #141414; rotate: {{ c.tilt }}; animation-delay: {{ c.delay }}; display: flex; flex-direction: column; gap: 2px;" aria-hidden="{{ c.hidden }}">
+              <span style="font-size: 11px; color: #6A655C;">{{ c.role }}</span>
+              <span style="font-weight: 500; font-size: 22px; line-height: 1.2;">{{ c.name }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-for>
+</section>
+
 <footer style="max-width: 1240px; margin: 0 auto; padding: 24px clamp(16px, 5vw, 64px) 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #6A655C; border-top: 2px solid #141414;"><span>anirudh panda · bangalore</span>
   <span>made with prompts and love</span></footer>
 
@@ -383,6 +414,10 @@ class Component extends DCLogic {
       { tag: "● irl", img: B + "e2ef89b1d9c49a374e38c1e82d584016", alt: "Women flexing at the Cultstore deadlift party with Gym Girls Club", meta: "@cultstore · women's day", big: "the deadlift party", cap: "women's day with gym girls club. loud cheers, heavy lifts. my fav event.", url: ig("cultstore", "DVyMykRCbDz") },
       { tag: "▶ social", img: B + "4784830fe125f53080b2cca350fb9a2a", alt: "Cult shoe launch reel", meta: "@cultstore · sep 25", big: "922 likes", cap: "the city doesn't wait. neither do we. the cult shoe launch.", url: ig("cultstore", "DOD3QeOCZS1") },
       { tag: "✎ words", img: B + "5e330f83707b16541a444d9f442c5d73", alt: "Nourish newsletter issue on caffeine", meta: "nourish with sim", big: "is caffeine messing with you?", cap: "a wellness issue that opens with the 3pm crash everyone knows.", url: "https://cdn.gamma.app/bfzfvhu4t6kvadw/94373f88314946f8947ed49d75540dad/original/sim-nws.beehiiv.compcaffeine-messing-with-you.pdf" }
+    ];
+    this.credits = [
+      { label: "act 2 · cultstore (curefit)", cls: "marq", people: [["anita", "my manager"], ["ishita", "brand manager"], ["abhik", "brand manager"], ["shivangi", "brand manager"], ["anushri", "influencer marketing"], ["sarthak", "social, teammate"], ["karan", "consultant"], ["arun", "consultant"], ["adhi", "consultant"], ["anirudh", "written, directed & very thankful", true]] },
+      { label: "act 1 · inagiffy", cls: "marqr", people: [["arnav", "founder"], ["geeta", "best boss ever"], ["tanishq", "design"], ["rahul", "design"], ["krupa", "design"], ["vaishnavi", "words"], ["tushar", "words"], ["yash", "words"]] }
     ];
     this.hats = ["social media guy", "creator wrangler", "event head", "scriptwriter", "director", "marketing ops", "finance ops (ugh)", "logistics", "endslate model"];
     this.rounds = [
@@ -466,6 +501,12 @@ class Component extends DCLogic {
       notDelivered: !s.delivered,
       editBrief: () => this.setState({ sent: false, delivered: false }),
       searches: searches.concat(searches).map((t) => ({ t: t })),
+      credRows: this.credits.map((r) => {
+        const tl = ["-1.5deg", "1.2deg", "-0.6deg", "1.8deg", "-1deg", "0.7deg"];
+        const one = r.people.map(([n, role, me], i) => ({ name: n, role: role, bg: me ? "#FFB81C" : "#FFFFFF", tilt: tl[i % tl.length], delay: (i % 2 ? 0.55 : 0) + "s" }));
+        const twice = one.concat(one).map((c, i) => ({ ...c, dupCls: i >= one.length ? "dup" : "", hidden: i >= one.length ? "true" : "false" }));
+        return { label: r.label, cls: r.cls, cards: twice };
+      }),
       hits: shown.map((h, i) => ({ ...h, tilt: hitTilts[i % 4] })),
       hitsLabel: s.moreHits ? "show fewer ↑" : "show " + (this.hits.length - 4) + " more hits ↓",
       toggleHits: () => this.setState({ moreHits: !s.moreHits }),
