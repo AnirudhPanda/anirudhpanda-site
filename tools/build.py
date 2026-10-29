@@ -1,7 +1,7 @@
 import re,sys,os
 import pathlib; ROOT=pathlib.Path(__file__).resolve().parent.parent
 SRC=str(ROOT/'src'); OUT=str(ROOT)
-pages={'Main':('index','Anirudh Panda · marketer, bangalore','Brand, social and content marketer in Bangalore. Grew Cultstore\'s Instagram from 60K to 220K+ with no agency, made newsletters earn ₹1Cr+, and runs events people show up to.'),
+pages={'Main':('index','Anirudh Panda · marketer, bangalore','Brand, social and content marketer in Bangalore. Leads brand and social at Cultstore, where the Instagram grew from 60K to 220K+. Led content at Inagiffy, where newsletters earned ₹1Cr+. Runs events people show up to.'),
  'Social':('social','Social & brand · Anirudh Panda','Creator collabs and brand films from Cultstore: 220K+ followers, 30M+ organic views a month, 100M+ views from creator partnerships.'),
  'Words':('words','Words · Anirudh Panda','Newsletters and copy that convert: ₹1Cr+ in newsletter ad revenue for 30+ clients at Inagiffy.'),
  'Irl':('irl','IRL · Anirudh Panda','Run clubs, dance days, recovery zones and a sold-out TEDx: the events Anirudh has put together.'),
