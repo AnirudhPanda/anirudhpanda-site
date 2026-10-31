@@ -216,7 +216,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #141414;outline-offset:3p
     <a href="/irl" class="btn" style="text-decoration: none; background: rgb(255, 255, 255); border: 2px solid rgb(20, 20, 20); padding: 28px; box-shadow: rgb(20, 20, 20) 4px 4px 0px; display: flex; flex-direction: column; gap: 10px">
       <span style="font-size: 13px; color: rgb(106, 101, 92)">03 · community &amp; irl</span>
       <span style="font-weight: 500; font-size: clamp(44px, 5vw, 64px); line-height: 1; letter-spacing: -0.03em">10+ events</span>
-      <span style="font-size: 15px">cult runs, a dance day with arma, a recovery zone at hyfit games, a sold-out tedx. people show up.</span>
+      <span style="font-size: 15px">200-runner cult runs, a 1,000+ crowd at the fitness carnival, a sold-out tedx. and every attendee goes into the funnel.</span>
       <span style="font-size: 12px; color: #6A655C;">hyfit games · indiranagar run club · gym girls club · smallcase · tedxsitb</span>
       <span style="font-weight: 500; font-size: 14px; margin-top: 6px">see the events →</span>
     </a>
@@ -241,12 +241,12 @@ button:focus-visible,a:focus-visible{outline:3px solid #141414;outline-offset:3p
     <div style="flex: 0 1 320px; min-width: 0; position: relative; overflow: hidden; background: #141414; transform: rotate(-2deg);">
       <img loading="lazy" decoding="async" src="/assets/e477c3ddbbdd918d608c2a8ac9814e2a.webp" alt="Creator Chirag on the Cult WalkPad" style="display: block; width: 100%; height: auto;">
       <span style="position: absolute; left: 12px; top: 12px; background: #FFB81C; color: #141414; font-size: 11px; font-weight: 500; padding: 3px 8px;">▶ reel</span>
-      <span style="position: absolute; left: 0; right: 0; bottom: 0; background: rgba(20,20,20,0.6); color: #F3F3F3; font-size: 12px; padding: 10px 12px;">@chirag.walunj · ~5M views · ♥ 130K</span>
+      <span style="position: absolute; left: 0; right: 0; bottom: 0; background: rgba(20,20,20,0.6); color: #F3F3F3; font-size: 12px; padding: 10px 12px;">@chirag.walunj · ~5M organic views</span>
     </div>
     <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 12px;">
       <span style="font-size: 12px; color: #6A655C;">social · creator collab · @chirag.walunj · feb 26</span>
       <span style="font-weight: 500; font-size: clamp(56px, 7vw, 88px); line-height: 0.95; letter-spacing: -0.03em;"><span style="background: linear-gradient(transparent 55%, #FFB81C 55%, #FFB81C 92%, transparent 92%);">5M</span> views</span>
-      <p style="margin: 0; font-size: 16px; max-width: 44ch;">an 8K-follower creator, our walkpad and zero rules. he walked 10,000 steps backwards on it. ~5M organic views and 130K likes later, that's the playbook.</p>
+      <p style="margin: 0; font-size: 16px; max-width: 44ch;">an 8K-follower creator, our walkpad and zero rules. he walked 10,000 steps backwards on it. ~5M organic views later, that's the playbook.</p>
       <span style="font-weight: 500; font-size: 14px;">watch it ↗</span>
     </div>
   </a>
@@ -428,7 +428,7 @@ class Component extends DCLogic {
     this.state = { r: 0, score: 0, pick: null, over: false, hat: 0, terms: [false, false, false], moreHits: false, problem: null, form: { name: "", brand: "", email: "", need: "", when: "", msg: "" }, sent: false, err: false };
     this.problemList = [
       { id: "reach", label: "my reach is dead", need: "social", fix: "i'd go through your last 30 posts, find the formats that actually travel, then build a weekly content system around them. more of what works, none of what doesn't.", proof: "cultstore went from 60K to 220K+ followers this way." },
-      { id: "film", label: "i need a brand film", need: "brand film", fix: "concept, script, shoot, edit and a launch plan, end to end. i keep it warm and specific, and i make sure it's built for the feed.", proof: "7 films for cultstore, from the barefoot film to the 19:47 film." },
+      { id: "film", label: "i need a brand film", need: "brand film", fix: "i steer the film from the brand side: brief, shoot coordination, social content cut from every shoot, and distribution that gets it seen.", proof: "the squat film went out through 230 pages. the barefoot film did 500K views from a pune test." },
       { id: "creators", label: "i need creators", need: "creators", fix: "pick the right person over the biggest one, hand them the product and a loose brief, then stay out of the way.", proof: "an 8K-follower creator got us ~5M organic views." },
       { id: "launch", label: "i'm launching something", need: "launch", fix: "launch content, creator seeding and an irl moment people actually show up to, all pointing at the same week.", proof: "the kinetic massager launch with anmol raina, plus 10 events in 8 months." },
       { id: "newsletter", label: "my newsletter doesn't pay", need: "newsletter", fix: "fix the content first so people open it, then build sponsor inventory that fits your readers.", proof: "₹1Cr+ in newsletter ad revenue for 30+ clients at inagiffy." }
@@ -436,13 +436,12 @@ class Component extends DCLogic {
     const B = "/assets/";
     const ig = (a, c) => "https://www.instagram.com/" + a + "/reel/" + c + "/";
     this.hits = [
-      { tag: "▶ film", img: B + "6d830805b43bcdb17698d8f6a43b2343.webp", alt: "A blue Cult barefoot shoe being strapped on", meta: "@cultstore · brand film", big: "the barefoot film", cap: "a shoe that feels like wearing nothing. hero film for our barefoot launch.", url: "https://www.instagram.com/p/DeeXC7Jhkbz/" },
+      { tag: "▶ film", img: B + "6d830805b43bcdb17698d8f6a43b2343.webp", alt: "A blue Cult barefoot shoe being strapped on", meta: "@cultstore · brand film", big: "the barefoot film", cap: "retargeted to a pune audience as a test. it clicked: 500K views.", url: "https://www.instagram.com/p/DeeXC7Jhkbz/" },
       { tag: "✎ words", img: B + "0b93f6caea876cb4294110b51c096f12.webp", alt: "Beyond with Sharan newsletter on NPS vs EPF", meta: "finance with sharan", big: "nps vs epf", cap: "retirement planning for people who'd rather not think about retirement.", url: "https://cdn.gamma.app/bfzfvhu4t6kvadw/38be9f8c9afc471dbe8579702dcde73b/original/NPS-vs.-EPF.pdf" },
       { tag: "● irl", img: B + "8f471a7c7f438268fa1bf916a46c54c7.webp", alt: "Runners at a Cult Run with Indiranagar Run Club", meta: "@cultstore · cult run x irc", big: "bangalore showed up", cap: "our first run with indiranagar run club. small things, big turnout.", url: ig("cultstore", "DUIpHvOiSQO") },
-      { tag: "▶ social", img: B + "3686954a3f361cdc097e6e542be3772d.webp", alt: "World Dance Day reel with ARMA", meta: "@armamusica · apr 26", big: "1,277 likes", cap: "world dance day with arma. 1 dance crew, 1 city, our gear on everyone.", url: ig("armamusica", "DXtJw-LCMAm") },
-      { tag: "▶ social", img: B + "b9e2098bf5c175fab39f1327122a6f34.webp", alt: "Celebrate with movement festive reel", meta: "@cultstore · oct 25", big: "1,161 likes", cap: "#celebratewithmovement. festive season, but make people move.", url: ig("cultstore", "DP_ZGbICdNM") },
+      { tag: "▶ social", img: B + "3686954a3f361cdc097e6e542be3772d.webp", alt: "World Dance Day reel with ARMA", meta: "@armamusica · apr 26", big: "world dance day", cap: "with rap artist arma. 1 dance crew, 1 city, our gear on everyone.", url: ig("armamusica", "DXtJw-LCMAm") },
       { tag: "● irl", img: B + "e2ef89b1d9c49a374e38c1e82d584016.webp", alt: "Women flexing at the Cultstore deadlift party with Gym Girls Club", meta: "@cultstore · women's day", big: "the deadlift party", cap: "women's day with gym girls club. loud cheers, heavy lifts. my fav event.", url: ig("cultstore", "DVyMykRCbDz") },
-      { tag: "▶ social", img: B + "4784830fe125f53080b2cca350fb9a2a.webp", alt: "Cult shoe launch reel", meta: "@cultstore · sep 25", big: "922 likes", cap: "the city doesn't wait. neither do we. the cult shoe launch.", url: ig("cultstore", "DOD3QeOCZS1") },
+      { tag: "▶ social", img: B + "4784830fe125f53080b2cca350fb9a2a.webp", alt: "Cult shoe launch reel", meta: "@cultstore · sep 25", big: "the cult shoe launch", cap: "the city doesn't wait. neither do we.", url: ig("cultstore", "DOD3QeOCZS1") },
       { tag: "✎ words", img: B + "5e330f83707b16541a444d9f442c5d73.webp", alt: "Nourish newsletter issue on caffeine", meta: "nourish with sim", big: "is caffeine messing with you?", cap: "a wellness issue that opens with the 3pm crash everyone knows.", url: "https://cdn.gamma.app/bfzfvhu4t6kvadw/94373f88314946f8947ed49d75540dad/original/sim-nws.beehiiv.compcaffeine-messing-with-you.pdf" }
     ];
     this.hats = ["social media guy", "creator wrangler", "event head", "scriptwriter", "director", "marketing ops", "finance ops (ugh)", "logistics", "endslate model"];

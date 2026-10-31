@@ -87,7 +87,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #141414;outline-offset:3p
     <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 12px;">
       <span style="font-size: 12px; color: #6A655C;">creator collab · @chirag.walunj</span>
       <span style="font-weight: 500; font-size: clamp(56px, 7vw, 88px); line-height: 0.95; letter-spacing: -0.03em;"><span style="background: linear-gradient(transparent 55%, #FFB81C 55%, #FFB81C 92%, transparent 92%);">5M</span> views</span>
-      <p style="margin: 0; font-size: 16px; max-width: 44ch;">an 8K-follower creator, our walkpad and zero rules. he walked 10,000 steps backwards on it. ~5M organic views and 130K likes later, that's the playbook.</p>
+      <p style="margin: 0; font-size: 16px; max-width: 44ch;">an 8K-follower creator, our walkpad and zero rules. he walked 10,000 steps backwards on it. ~5M organic views later, that's the playbook.</p>
       <span style="font-weight: 500; font-size: 14px;">watch it ↗</span>
     </div>
   </a>
@@ -114,8 +114,19 @@ button:focus-visible,a:focus-visible{outline:3px solid #141414;outline-offset:3p
         <span style="font-size: 13px; color: #A8A39A;">brand films &amp; product</span>
         <h2 style="margin: 0; font-family: 'Covered By Your Grace', cursive; font-weight: 400; font-size: clamp(44px, 6vw, 80px); line-height: 1; color: #F3F3F3;">stuff we brought to life</h2>
       </div>
-      <p style="margin: 0; max-width: 40ch; font-size: 14px; color: #A8A39A;">a brand film takes a village: shoot crews, athletes, editors, and anita, ishita, abhik and shivangi on the brand side. i get to steer it from idea to launch.</p>
+      <p style="margin: 0; max-width: 44ch; font-size: 14px; color: #A8A39A;">the big films were shot with production partners like mansoor and gmf, with anita, ishita, abhik and shivangi on the brand side. my part sits on every card: coordination, shoots, social cut-downs and distribution.</p>
     </div>
+    <a href="https://www.instagram.com/p/DUiaY9uiYPL/" class="card" style="text-decoration: none; color: #141414; display: flex; flex-wrap: wrap; gap: 36px; align-items: center; background: #F3EFE6; padding: 20px; box-shadow: 8px 8px 0 #FFB81C;">
+      <div style="flex: 0 1 420px; min-width: 0; overflow: hidden;">
+        <img src="/_blob/723e33b51aeda85ea6ff725fc8ed363b" alt="Office workers squatting at their desks" style="display: block; width: 100%; height: auto;">
+      </div>
+      <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-size: 12px; color: #6A655C;">brand film · bottomwear · end to end</span>
+        <span style="font-weight: 500; font-size: clamp(48px, 6vw, 76px); line-height: 0.95; letter-spacing: -0.03em;"><span style="background: linear-gradient(transparent 55%, #FFB81C 55%, #FFB81C 92%, transparent 92%);">230</span> pages</span>
+        <p style="margin: 0; font-size: 16px; max-width: 46ch;">be an everyday athlete: why stand when you can squat? i ran this one end to end with anita, then pushed it through 180 meme pages and 50 marketing pages. it picked up a lot of organic traction and reached people who'd never followed cult.</p>
+        <span style="font-weight: 500; font-size: 14px;">watch it ↗</span>
+      </div>
+    </a>
     <div style="columns: 3 260px; column-gap: 22px;">
       <sc-for list="{{ films }}" as="f" hint-placeholder-count="8">
         <a href="{{ f.url }}" class="card" style="text-decoration: none; color: #141414; background: #F3EFE6; padding: 12px 12px 18px; display: flex; flex-direction: column; gap: 10px; break-inside: avoid; margin-bottom: 26px; rotate: {{ f.tilt }};">
@@ -123,6 +134,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #141414;outline-offset:3p
           <span style="font-size: 11px; color: #6A655C;">{{ f.meta }}</span>
           <span style="font-weight: 500; font-size: 19px; line-height: 1.2;">{{ f.name }}</span>
           <span style="font-size: 13px; line-height: 1.45;">{{ f.line }}</span>
+          <span style="font-size: 13px; line-height: 1.45; border-top: 1px solid #D9D3C4; padding-top: 8px;"><strong style="font-weight: 500;">my part:</strong> {{ f.part }}</span>
         </a>
       </sc-for>
     </div>
@@ -164,7 +176,7 @@ class Component extends DCLogic {
     const tilt = (list) => list.map((x, i) => ({ ...x, tilt: T[i % T.length] }));
     const v = this.vals();
     const tab = (this.state && this.state.tab) || "creators";
-    const defs = [["creators", "creators & collabs", v.creators.length + 1], ["films", "brand films & product", v.films.length]];
+    const defs = [["creators", "creators & collabs", v.creators.length + 1], ["films", "brand films & product", v.films.length + 1]];
     return {
       creators: tilt(v.creators),
       films: tilt(v.films),
@@ -187,7 +199,7 @@ class Component extends DCLogic {
       creators: [
         { img: B + "6467af6112caccbfcb6551985e6f2351", alt: "Akshay Kakkar in Cult apparel", meta: "creator collab", name: "akshay kakkar", line: "a creator collab with akshay kakkar, in cult apparel.", url: p("DN8GCWkEoqD") },
         { img: B + "e39eb39b0767d4168bd309d07db7a7dc", alt: "Anmol Raina testing the Cult Kinetic massager", meta: "product launch · @anmolraina13", name: "kinetic massager x anmol raina", line: "launched the kinetic massager, our premium massage gun, with anmol raina.", url: p("Ddq43JjhhgG") },
-        { img: B + "3686954a3f361cdc097e6e542be3772d", alt: "ARMA and dancers in front of a CULT sign", meta: "artist collab · international dance day", name: "arma x cultstore", line: "rap artist arma, a dance crew and our gear on everyone. 1,277 likes.", url: p("DXtJw-LCMAm") },
+        { img: B + "3686954a3f361cdc097e6e542be3772d", alt: "ARMA and dancers in front of a CULT sign", meta: "artist collab · international dance day", name: "arma x cultstore", line: "rap artist arma, a dance crew and our gear on everyone.", url: p("DXtJw-LCMAm") },
         { img: B + "e07f94e048cd01df138a809caba079ba", alt: "A couple taking a gym mirror selfie", meta: "brand collab · men's day", name: "aisle x cultstore", line: "a men's day collab with the dating app aisle. men in love is our fav genre.", url: p("DROt7GwCSHQ") }
       ],
       events: [
@@ -203,13 +215,11 @@ class Component extends DCLogic {
         { when: "may 26", name: "hyfit games", what: "title sponsors. our recovery zone handled the aftermath.", img: B + "c331ed80a51bcd2e3e112429ec1b7584", url: p("DYUGcEusMpB") }
       ],
       films: [
-        { img: B + "6d830805b43bcdb17698d8f6a43b2343", alt: "A blue Cult barefoot shoe being strapped on", meta: "brand film · footwear", name: "the barefoot film", line: "a shoe that feels like wearing nothing.", url: p("DeeXC7Jhkbz") },
-        { img: B + "6b603ab15644977773237fd98d8b3faf", alt: "Athletes walking on a track in yellow shoes", meta: "brand film · apex racer launch", name: "the 19:47 film", line: "launching the apex racer with elite athletes.", url: p("DcDLV2jpjdn") },
-        { img: B + "4784830fe125f53080b2cca350fb9a2a", alt: "A man jumping in a Bangalore flower market", meta: "brand film · footwear", name: "cult footwear film", line: "the city doesn't wait. neither do we. 922 likes.", url: p("DOD3QeOCZS1") },
-        { img: B + "b9e2098bf5c175fab39f1327122a6f34", alt: "A woman holding a tray of gulab jamun", meta: "brand film · diwali", name: "#celebratewithmovement", line: "a diwali film with athletes from different sports. 1,161 likes.", url: p("DP_ZGbICdNM") },
-        { img: B + "723e33b51aeda85ea6ff725fc8ed363b", alt: "Office workers squatting at their desks", meta: "brand film · bottomwear", name: "be an everyday athlete", line: "why stand when you can squat? bottomwear for real life.", url: p("DUiaY9uiYPL") },
-        { img: B + "56676beafb0dfe9e4b94268ed5a9ba9f", alt: "An athlete in a teal Cult tee", meta: "launch · new season apparel", name: "new season drop", line: "new season apparel, launched with athletes.", url: p("DXwenO2JAtv") },
-        { img: B + "a4fc59295c39cc2c9d9d08968234dc46", alt: "Two women on Pilates reformers in skorts", meta: "storytelling · skorts", name: "meet anya and maira", line: "storytelling plus product content for skorts.", url: p("DZXf8ixMUHs") }
+        { img: B + "6d830805b43bcdb17698d8f6a43b2343", alt: "A blue Cult barefoot shoe being strapped on", meta: "brand film · footwear", name: "the barefoot film", line: "a shoe that feels like wearing nothing.", part: "coordination, social content cut from the shoot, and a retargeting test in pune that clicked: 500K views.", url: p("DeeXC7Jhkbz") },
+        { img: B + "6b603ab15644977773237fd98d8b3faf", alt: "Athletes walking on a track in yellow shoes", meta: "brand film · apex racer launch", name: "the 19:47 film", line: "launching the apex racer with elite athletes.", part: "on set helping with direction, coordinating the athletes, then boosting it to the right audience on social.", url: p("DcDLV2jpjdn") },
+        { img: B + "4784830fe125f53080b2cca350fb9a2a", alt: "A man jumping in a Bangalore flower market", meta: "brand film · footwear", name: "cult footwear film", line: "the city doesn't wait. neither do we.", part: "coordination and social content from the shoot.", url: p("DOD3QeOCZS1") },
+        { img: B + "56676beafb0dfe9e4b94268ed5a9ba9f", alt: "An athlete in a teal Cult tee", meta: "launch · new season apparel · prod: gmf", name: "new season drop", line: "a 24-hour shoot with gmf. the most fun i've had on a set, and the steepest learning curve.", part: "on set for all 24 hours. learned that the shot list is the boss, the light waits for nobody, and a fed crew is a happy crew.", url: p("DXwenO2JAtv") },
+        { img: B + "a4fc59295c39cc2c9d9d08968234dc46", alt: "Two women on Pilates reformers in skorts", meta: "storytelling · skorts", name: "meet anya and maira", line: "storytelling plus product content for skorts.", part: "end to end, all mine: idea, shoot, edit and post.", url: p("DZXf8ixMUHs") }
       ]
     };
   }

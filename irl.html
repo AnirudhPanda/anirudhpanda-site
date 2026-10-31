@@ -61,7 +61,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #141414;outline-offset:3p
   <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
     <span style="font-size: 13px; color: #6A655C;">03 · community &amp; irl</span>
     <h1 style="margin: 0; font-family: 'Covered By Your Grace', cursive; font-weight: 400; font-size: clamp(56px, 8vw, 112px); line-height: 0.95; max-width: 14ch;">i get people off their phones and into a room</h1>
-    <p style="margin: 0; max-width: 58ch; font-size: 17px;">run clubs, dance days, recovery zones, a sold-out tedx. i've organised events every year since college, and at cultstore i've led 10+ of them, from the first idea to the last water bottle, with partners, run clubs and vendors who never said no to a 5am call.</p>
+    <p style="margin: 0; max-width: 58ch; font-size: 17px;">run clubs, dance days, recovery zones, a sold-out tedx. i've organised events every year since college, and at cultstore i've led 10+ of them, from the first idea to the last water bottle, with partners, run clubs and vendors who never said no to a 5am call. every event feeds the funnel: we capture attendees, then send offers over time to turn them into customers.</p>
   </div>
   <figure style="flex: 1 1 300px; max-width: 380px; min-width: 0; margin: 0; background: #FFFFFF; padding: 12px 12px 0; box-shadow: 0 14px 30px rgba(20,20,20,0.18); transform: rotate(3deg);">
     <img loading="lazy" decoding="async" src="/assets/aec4684d8bd1a69fc0c858dd8e10d6e2.webp" alt="Anirudh with the Cult champs at an event" style="display: block; width: 100%; aspect-ratio: 3/4; object-fit: cover;">
@@ -170,14 +170,14 @@ class Component extends DCLogic {
     const ig = (a, c) => "https://www.instagram.com/" + a + "/reel/" + c + "/";
     this.events = [
       { when: "oct 25", name: "rave fit", what: "a fitness rave. lights, music, planks. awsm folks at wearecult did this primarily.", img: B + "8e668c84e7d4f0fa2e041287f026c82e.webp", url: ig("wearecult", "DPRSGiAE87V") },
-      { when: "jan 26", name: "the first cult run x irc", what: "our first run with indiranagar run club. small things, big turnout.", img: B + "8f471a7c7f438268fa1bf916a46c54c7.webp", url: ig("cultstore", "DUIpHvOiSQO") },
-      { when: "mar 26", name: "women's day deadlift party", what: "with gym girls club. uniting and uplifting women through lifting.", img: B + "e2ef89b1d9c49a374e38c1e82d584016.webp", url: ig("cultstore", "DVyMykRCbDz") },
-      { when: "mar 26", name: "cult fitness carnival", what: "our stall at the carnival. people came to browse, we made them move.", img: B + "1f3a959730c5b0c0397d3e1847f8aa3f.webp", url: ig("cultstore", "DV_E6QrjPCz") },
+      { when: "jan 26", name: "the first cult run x irc", what: "200 runners. our first run with indiranagar run club.", img: B + "8f471a7c7f438268fa1bf916a46c54c7.webp", url: ig("cultstore", "DUIpHvOiSQO") },
+      { when: "mar 26", name: "women's day deadlift party", what: "100+ lifters, with gym girls club. uniting and uplifting women through lifting.", img: B + "e2ef89b1d9c49a374e38c1e82d584016.webp", url: ig("cultstore", "DVyMykRCbDz") },
+      { when: "mar 26", name: "cult fitness carnival", what: "1,000+ people through our stall. they came to browse, we made them move.", img: B + "1f3a959730c5b0c0397d3e1847f8aa3f.webp", url: ig("cultstore", "DV_E6QrjPCz") },
       { when: "apr 26", name: "vinyasa yoga day", what: "cultstore x akin club x bastian for yoga day.", img: B + "affbc6c45e4bc0269ad16ed7a72573b7.webp", url: ig("cultstore", "DW-tP67jFTt") },
       { when: "apr 26", name: "hyrox athletes", what: "sponsored hyrox athletes in cult gear and had a lot of fun doing it.", img: B + "dfc232532fcfa13277bb535aa967dc24.webp", url: ig("cultstore", "DXTRMNMjCsS") },
-      { when: "apr 26", name: "cult run 2.0 x irc", what: "round 2 with indiranagar run club. bangalore showed up again.", img: B + "3fe6f7515873522c17aef0028eaf6293.webp", url: ig("cultstore", "DXrTqGPjHEI") },
-      { when: "apr 26", name: "dance day x arma", what: "international dance day with rap artist arma. 1,277 likes.", img: B + "3686954a3f361cdc097e6e542be3772d.webp", url: ig("armamusica", "DXtJw-LCMAm") },
-      { when: "may 26", name: "flex with your mom", what: "a mother's day workout and breakfast at jw marriott, with offlyn and social dining.", img: B + "05fef884bc606550b1aff28b4f3e7997.webp", url: ig("cultstore", "DYPaZ-Hprh5") },
+      { when: "apr 26", name: "cult run 2.0 x irc", what: "200 runners again. round 2 with indiranagar run club.", img: B + "3fe6f7515873522c17aef0028eaf6293.webp", url: ig("cultstore", "DXrTqGPjHEI") },
+      { when: "apr 26", name: "dance day x arma", what: "international dance day with rap artist arma.", img: B + "3686954a3f361cdc097e6e542be3772d.webp", url: ig("armamusica", "DXtJw-LCMAm") },
+      { when: "may 26", name: "flex with your mom", what: "70+ people. a mother's day workout and breakfast at jw marriott, with offlyn and social dining.", img: B + "05fef884bc606550b1aff28b4f3e7997.webp", url: ig("cultstore", "DYPaZ-Hprh5") },
       { when: "may 26", name: "hyfit games", what: "title sponsors. our recovery zone handled the aftermath.", img: B + "c331ed80a51bcd2e3e112429ec1b7584.webp", url: ig("cultstore", "DYUGcEusMpB") }
     ];
     this.sides = [
